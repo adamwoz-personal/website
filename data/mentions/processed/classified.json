@@ -1,0 +1,1005 @@
+{
+  "generated_at": "2026-08-07T18:50:29.736817+00:00",
+  "source_input": "data/mentions/raw/verified.json",
+  "curated_count": 31,
+  "unabridged_count": 40,
+  "unverified_count": 1,
+  "curated": [
+    {
+      "url": "https://www.asisonline.org/security-management-magazine/articles/2011/08/$00.000025-the-going-rate-on-the-black-market-for-your-email-address/",
+      "domain": "www.asisonline.org",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "$00.000025: The Going Rate On The Black Market For Your Email Address",
+      "description": "Your source for the latest security news.",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "ASIS Security Management"
+    },
+    {
+      "url": "https://www.latimes.com/business/la-fi-spear-phishing-20140521-story.html",
+      "domain": "www.latimes.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "&#x27;Spearphishing&#x27; a tightly focused scheme to steal corporate secrets - Los Angeles Times",
+      "description": "Much of the damage allegedly inflicted by the Chinese military officers charged with economic espionage this week came via email scams.",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "Los Angeles Times"
+    },
+    {
+      "url": "https://patents.justia.com/inventor/adam-wosotowsky",
+      "domain": "patents.justia.com",
+      "status": 403,
+      "verified": true,
+      "trusted": true,
+      "title": "Adam Wosotowsky - Inventions, Patents and Patent Applications",
+      "description": "",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "Justia Patents"
+    },
+    {
+      "url": "https://www.kqed.org/news/85463/experts-warn-users-to-disable-widely-used-java-software",
+      "domain": "www.kqed.org",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "Dept. of Homeland Security Suggests Users Disable Oracle&#x27;s Widely Used Java Software; Instructions For Disabling",
+      "description": "Computer experts are warning personal computer users to disable Oracle&#x27;s Java program, which is run by 1.1 billion desktops, according to the company.",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "KQED"
+    },
+    {
+      "url": "https://www.technewsworld.com/story/encryption-merits-can-be-exaggerated-78433.html",
+      "domain": "www.technewsworld.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "Encryption Merits Can Be Exaggerated",
+      "description": "Encryption combined with cloud storage has been hailed as a highly secure way for organizations to protect their data from Net marauders, but their value may be overstated, contend two security pros. While encrypting data is better than not encrypting it, where it&#039;s decrypted can be an important security consideration, said Steve Weis, CTO and cofounder of PrivateCore. Data at rest that&#039;s been encrypted has strong protection. It&#039;s when the data has to be decrypted for use with applications that it can become vulnerable.",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "TechNewsWorld"
+    },
+    {
+      "url": "https://www.govtech.com/security/Financial-Breaches-Increase-Amid-Global-Cyber-Crime-Wave-.html",
+      "domain": "www.govtech.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "Financial Breaches Increase Amid Global Cyber Crime Wave",
+      "description": "Threats report analyzes global hacking activity, finds that as network infiltration incidents increased, malware strains grew in prominence.",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "Government Technology"
+    },
+    {
+      "url": "https://www.mlive.com/news/detroit/2011/05/post_60.html",
+      "domain": "www.mlive.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "From social media to &#x27;veritable cesspool of spam:&#x27; Free Press columnist analyzes Facebook security - mlive.com",
+      "description": "How safe do you feel your accounts, such as Facebook, are? Are you worried? Have you ever been a victim to digital identity theft? If so, how?",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "MLive"
+    },
+    {
+      "url": "https://www.securityweek.com/global-spam-drops-third-after-rustock-botnet-gets-crushed-symantec-says/",
+      "domain": "www.securityweek.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "Global Spam Drops by a Third After Rustock Botnet Gets Crushed, Symantec Says - SecurityWeek",
+      "description": "The Rustock Botnet was sending as many as 13.82 Billion spam emails each day before being taken down early this month by an effort headed by Microsoft in cooperation with authorities and the legal system. According to Symantec\u2019s March 2011 MessageLabs Intelligence Report, the Rustock botnet had been responsible for an average of 28.5% of global spam sent from all botnets in March.",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "SecurityWeek"
+    },
+    {
+      "url": "https://www.crn.com/news/security/229300052/google-android-malware-gets-its-comeuppance-malicious-apps-pulled",
+      "domain": "www.crn.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "Google Android Malware Gets Its Comeuppance; Malicious Apps Pulled | CRN",
+      "description": "Dozens of apps hosting malware have been smoked out of the Google Android Market as malware writers and attackers continue to target the open mobile device platform.",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "CRN"
+    },
+    {
+      "url": "https://ieeexplore.ieee.org/document/9003003/",
+      "domain": "ieeexplore.ieee.org",
+      "status": 202,
+      "verified": true,
+      "trusted": true,
+      "title": "Graph neural networks and cross-protocol analysis for detecting malicious IP addresses (IEEE)",
+      "description": "",
+      "match_terms_hit": [],
+      "content_type": "text/html",
+      "outlet": "IEEE Xplore"
+    },
+    {
+      "url": "https://www.tomsguide.com/us/how-to-erase-personal-data,news-18034.html",
+      "domain": "www.tomsguide.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "How to Erase Your Data From an Old Computer or Phone - Tom's Guide | Tom's Guide",
+      "description": "When you ditch your computer or smartphone, do you wipe it clean? How about your work computer? Here",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "Tom's Guide"
+    },
+    {
+      "url": "https://abcnews.com/Technology/denial-services-attack-egypt-cord-cutting-slow-internet/story?id=18833827",
+      "domain": "abcnews.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "Is the Internet O.K.? An Attack on a Spam Tracking Company and Cut Internet Cord Slows Down Speeds - ABC News",
+      "description": "It&#x27;s been a tough week for the Internet. A cut cable and massive cyber attack have impacted web speeds this week.",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "ABC News"
+    },
+    {
+      "url": "https://www.databreachtoday.com/malware-hits-kaisers-research-data-a-6714",
+      "domain": "www.databreachtoday.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "Malware Hits Kaiser\u00e2\u20ac\u2122s Research Data - DataBreachToday",
+      "description": "The recent discovery of malware on a server storing health data used for research has prompted Kaiser Permanente to contact 5,100 patients about a potential privacy",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "Data Breach Today"
+    },
+    {
+      "url": "https://www.govtech.com/security/Malware-on-the-Rise-Across-Multiple-Devices-and-Platforms-in-2012-Report.html",
+      "domain": "www.govtech.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "Malware on the Rise Across Multiple Devices and Platforms in 2012 (Report)",
+      "description": "McAfee report discloses trends in smartphone threats, spam and cybercrime.",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "Government Technology"
+    },
+    {
+      "url": "https://www.foxbusiness.com/features/mcafee-hackers-more-patient-sophisticated-than-ever",
+      "domain": "www.foxbusiness.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "McAfee: Hackers More Patient, Sophisticated Than Ever | Fox Business",
+      "description": "Cyber Threat: Hackers are growing increasingly calculated, waiting for just the right moment to strike in hopes of finding a treasure trove of lucrative data.",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "Fox Business"
+    },
+    {
+      "url": "https://www.cio.com/article/282193/security0-mobile-app-security-5-ways-to-protect-your-smartphone.html",
+      "domain": "www.cio.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "Mobile App Security: 5 Ways to Protect Your Smartphone | CIO",
+      "description": "Smartphones and mobile apps, particularly in the Android family, are becoming more susceptible to hackers. Bill Snyder of CIO.com highlights five easy ways to fortify your mobile apps against the bad guys.",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "CIO"
+    },
+    {
+      "url": "https://archive.nytimes.com/gadgetwise.blogs.nytimes.com/2012/05/16/now-on-pinterest-scams/",
+      "domain": "archive.nytimes.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "Now on Pinterest: Scams - The New York Times",
+      "description": "It wasn&#x2019;t long before scammers and phishers found their way onto Pinterest, the growing social-network site.",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "The New York Times (archive)"
+    },
+    {
+      "url": "https://www.cbc.ca/news/science/online-banking-encryption-broken-1.1052788",
+      "domain": "www.cbc.ca",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "Online banking encryption broken | CBC News",
+      "description": "Security researchers have developed a potential cyber attack that could decrypt secure communications used by online banking and payment sites.",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "CBC News"
+    },
+    {
+      "url": "https://www.infosecurity-magazine.com/news/russian-brides-attempt-to-thaw-the-ice-for-winter/",
+      "domain": "www.infosecurity-magazine.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "Russian brides attempt to thaw the ice for winter spammers - Infosecurity Magazine",
+      "description": "The latest monthly spam report shows that, regardless of the world economy, there is one item that is particularly hot this winter: Russian mail-order brides. This is according to newly released figures from McAfee.",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "Infosecurity Magazine"
+    },
+    {
+      "url": "https://www.chabad.org/news/article_cdo/aid/1008771/jewish/Security-Report-Details-Brand-Theft.htm",
+      "domain": "www.chabad.org",
+      "status": 403,
+      "verified": true,
+      "trusted": true,
+      "title": "Security Report Details Brand Theft",
+      "description": "",
+      "match_terms_hit": [],
+      "content_type": "text/html",
+      "outlet": "Chabad.org"
+    },
+    {
+      "url": "https://politifact.com/factchecks/2011/jul/17/sheldon-whitehouse/sen-whitehouse-says-criminals-can-hack-home-comput/",
+      "domain": "politifact.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "Sen. Whitehouse says criminals can hack into home computers and spy on victims through video cameras &#8211; PolitiFact",
+      "description": "&quot;Some criminals have learned how to spy on Americans, hacking into our home computers and looking out through the video camera attached to the screen.&quot;",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "PolitiFact"
+    },
+    {
+      "url": "https://xcelevents.swoogo.com/isf2024attendee/session/1904366/threat-mapping-in-texas-%EF%BF%BD-mobile-threat-landscape-2024",
+      "domain": "xcelevents.swoogo.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "Session Details: 2024 Information Security Forum by DIR - Attendee Registration",
+      "description": "",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "Texas DIR Info Security Forum"
+    },
+    {
+      "url": "https://xcelevents.swoogo.com/isf2024attendee/speaker/1079388/adam-wosotowsky",
+      "domain": "xcelevents.swoogo.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "Speaker Details: 2024 Information Security Forum by DIR - Attendee Registration",
+      "description": "",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "Texas DIR Info Security Forum"
+    },
+    {
+      "url": "https://www.nbcnews.com/tech/tech-news/twitter-worm-leads-users-fake-malicious-site-flna125525",
+      "domain": "www.nbcnews.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "Twitter worm leads users to fake and malicious site",
+      "description": "",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "NBC News"
+    },
+    {
+      "url": "https://www.csoonline.com/article/534790/data-protection-unique-malware-samples-broke-the-75-million-mark-in-2011.html",
+      "domain": "www.csoonline.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "Unique Malware Samples Broke the 75 Million Mark in 2011 | CSO Online",
+      "description": "",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "CSO Online"
+    },
+    {
+      "url": "https://www.latimes.com/business/la-xpm-2013-mar-27-la-fi-tn-spamhause-cyberbunker-ddos-attack-20130327-story.html",
+      "domain": "www.latimes.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "Unprecedented cyber attack won&#x27;t slow down the Internet - Los Angeles Times",
+      "description": "Unprecedented cyber attack won&#x27;t slow down the Internet",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "Los Angeles Times"
+    },
+    {
+      "url": "https://www.scworld.com/news/vskimmer-trojan-steals-card-data-on-point-of-sale-systems",
+      "domain": "www.scworld.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "VSkimmer trojan steals card data on point-of-sale systems | news | SC Media",
+      "description": "The trojan was recently a topic of discussion on an underground Russian forum, researchers found.",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "SC World"
+    },
+    {
+      "url": "https://www.cleveland.com/consumeraffairs/2011/02/valentines_day_scams_and_schem.html",
+      "domain": "www.cleveland.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "Valentine&#x27;s Day scams and schemes -- sometimes love stinks: Plain Dealing - cleveland.com",
+      "description": "It&#x27;s not all roses. Valentine&#x27;s Day and dating schemes to avoid.",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "Cleveland.com"
+    },
+    {
+      "url": "https://www.eastbaytimes.com/2012/08/03/virtual-currency-comes-with-real-threats/",
+      "domain": "www.eastbaytimes.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "Virtual currency comes with real threats &#8211; East Bay Times",
+      "description": "Virtual currency comes with real threats",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "East Bay Times"
+    },
+    {
+      "url": "https://www.pcworld.com/article/460036/what_you_should_know_about_grum_and_the_botnet_takedown.html",
+      "domain": "www.pcworld.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "What You Should Know About Grum and the Botnet Takedown | PCWorld",
+      "description": "Grum--the third largest botnet--has been shut down by authorities, but that doesn&#039;t mean the threat isn&#039;t still out there.",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "PCWorld"
+    },
+    {
+      "url": "https://www.cnet.com/news/privacy/windows-dll-bug-hits-dozens-of-apps/",
+      "domain": "www.cnet.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "Windows DLL bug hits dozens of apps - CNET",
+      "description": "A flaw in the way Windows handles dynamic-link library and related files likely affects hundreds of applications and has already been used in malicious attacks in the wild.",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "CNET"
+    }
+  ],
+  "unabridged": [
+    {
+      "url": "https://www.asisonline.org/security-management-magazine/articles/2011/08/$00.000025-the-going-rate-on-the-black-market-for-your-email-address/",
+      "domain": "www.asisonline.org",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "$00.000025: The Going Rate On The Black Market For Your Email Address",
+      "description": "Your source for the latest security news.",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "ASIS Security Management"
+    },
+    {
+      "url": "https://www.latimes.com/business/la-fi-spear-phishing-20140521-story.html",
+      "domain": "www.latimes.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "&#x27;Spearphishing&#x27; a tightly focused scheme to steal corporate secrets - Los Angeles Times",
+      "description": "Much of the damage allegedly inflicted by the Chinese military officers charged with economic espionage this week came via email scams.",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "Los Angeles Times"
+    },
+    {
+      "url": "https://patents.justia.com/inventor/adam-wosotowsky",
+      "domain": "patents.justia.com",
+      "status": 403,
+      "verified": true,
+      "trusted": true,
+      "title": "Adam Wosotowsky - Inventions, Patents and Patent Applications",
+      "description": "",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "Justia Patents"
+    },
+    {
+      "url": "https://www.kqed.org/news/85463/experts-warn-users-to-disable-widely-used-java-software",
+      "domain": "www.kqed.org",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "Dept. of Homeland Security Suggests Users Disable Oracle&#x27;s Widely Used Java Software; Instructions For Disabling",
+      "description": "Computer experts are warning personal computer users to disable Oracle&#x27;s Java program, which is run by 1.1 billion desktops, according to the company.",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "KQED"
+    },
+    {
+      "url": "https://www.technewsworld.com/story/encryption-merits-can-be-exaggerated-78433.html",
+      "domain": "www.technewsworld.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "Encryption Merits Can Be Exaggerated",
+      "description": "Encryption combined with cloud storage has been hailed as a highly secure way for organizations to protect their data from Net marauders, but their value may be overstated, contend two security pros. While encrypting data is better than not encrypting it, where it&#039;s decrypted can be an important security consideration, said Steve Weis, CTO and cofounder of PrivateCore. Data at rest that&#039;s been encrypted has strong protection. It&#039;s when the data has to be decrypted for use with applications that it can become vulnerable.",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "TechNewsWorld"
+    },
+    {
+      "url": "https://www.govtech.com/security/Financial-Breaches-Increase-Amid-Global-Cyber-Crime-Wave-.html",
+      "domain": "www.govtech.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "Financial Breaches Increase Amid Global Cyber Crime Wave",
+      "description": "Threats report analyzes global hacking activity, finds that as network infiltration incidents increased, malware strains grew in prominence.",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "Government Technology"
+    },
+    {
+      "url": "https://www.mlive.com/news/detroit/2011/05/post_60.html",
+      "domain": "www.mlive.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "From social media to &#x27;veritable cesspool of spam:&#x27; Free Press columnist analyzes Facebook security - mlive.com",
+      "description": "How safe do you feel your accounts, such as Facebook, are? Are you worried? Have you ever been a victim to digital identity theft? If so, how?",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "MLive"
+    },
+    {
+      "url": "https://www.securityweek.com/global-spam-drops-third-after-rustock-botnet-gets-crushed-symantec-says/",
+      "domain": "www.securityweek.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "Global Spam Drops by a Third After Rustock Botnet Gets Crushed, Symantec Says - SecurityWeek",
+      "description": "The Rustock Botnet was sending as many as 13.82 Billion spam emails each day before being taken down early this month by an effort headed by Microsoft in cooperation with authorities and the legal system. According to Symantec\u2019s March 2011 MessageLabs Intelligence Report, the Rustock botnet had been responsible for an average of 28.5% of global spam sent from all botnets in March.",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "SecurityWeek"
+    },
+    {
+      "url": "https://www.crn.com/news/security/229300052/google-android-malware-gets-its-comeuppance-malicious-apps-pulled",
+      "domain": "www.crn.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "Google Android Malware Gets Its Comeuppance; Malicious Apps Pulled | CRN",
+      "description": "Dozens of apps hosting malware have been smoked out of the Google Android Market as malware writers and attackers continue to target the open mobile device platform.",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "CRN"
+    },
+    {
+      "url": "https://ieeexplore.ieee.org/document/9003003/",
+      "domain": "ieeexplore.ieee.org",
+      "status": 202,
+      "verified": true,
+      "trusted": true,
+      "title": "Graph neural networks and cross-protocol analysis for detecting malicious IP addresses (IEEE)",
+      "description": "",
+      "match_terms_hit": [],
+      "content_type": "text/html",
+      "outlet": "IEEE Xplore"
+    },
+    {
+      "url": "https://www.tomsguide.com/us/how-to-erase-personal-data,news-18034.html",
+      "domain": "www.tomsguide.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "How to Erase Your Data From an Old Computer or Phone - Tom's Guide | Tom's Guide",
+      "description": "When you ditch your computer or smartphone, do you wipe it clean? How about your work computer? Here",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "Tom's Guide"
+    },
+    {
+      "url": "https://abcnews.com/Technology/denial-services-attack-egypt-cord-cutting-slow-internet/story?id=18833827",
+      "domain": "abcnews.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "Is the Internet O.K.? An Attack on a Spam Tracking Company and Cut Internet Cord Slows Down Speeds - ABC News",
+      "description": "It&#x27;s been a tough week for the Internet. A cut cable and massive cyber attack have impacted web speeds this week.",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "ABC News"
+    },
+    {
+      "url": "https://www.databreachtoday.com/malware-hits-kaisers-research-data-a-6714",
+      "domain": "www.databreachtoday.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "Malware Hits Kaiser\u00e2\u20ac\u2122s Research Data - DataBreachToday",
+      "description": "The recent discovery of malware on a server storing health data used for research has prompted Kaiser Permanente to contact 5,100 patients about a potential privacy",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "Data Breach Today"
+    },
+    {
+      "url": "https://www.govtech.com/security/Malware-on-the-Rise-Across-Multiple-Devices-and-Platforms-in-2012-Report.html",
+      "domain": "www.govtech.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "Malware on the Rise Across Multiple Devices and Platforms in 2012 (Report)",
+      "description": "McAfee report discloses trends in smartphone threats, spam and cybercrime.",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "Government Technology"
+    },
+    {
+      "url": "https://www.foxbusiness.com/features/mcafee-hackers-more-patient-sophisticated-than-ever",
+      "domain": "www.foxbusiness.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "McAfee: Hackers More Patient, Sophisticated Than Ever | Fox Business",
+      "description": "Cyber Threat: Hackers are growing increasingly calculated, waiting for just the right moment to strike in hopes of finding a treasure trove of lucrative data.",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "Fox Business"
+    },
+    {
+      "url": "https://www.cio.com/article/282193/security0-mobile-app-security-5-ways-to-protect-your-smartphone.html",
+      "domain": "www.cio.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "Mobile App Security: 5 Ways to Protect Your Smartphone | CIO",
+      "description": "Smartphones and mobile apps, particularly in the Android family, are becoming more susceptible to hackers. Bill Snyder of CIO.com highlights five easy ways to fortify your mobile apps against the bad guys.",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "CIO"
+    },
+    {
+      "url": "https://archive.nytimes.com/gadgetwise.blogs.nytimes.com/2012/05/16/now-on-pinterest-scams/",
+      "domain": "archive.nytimes.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "Now on Pinterest: Scams - The New York Times",
+      "description": "It wasn&#x2019;t long before scammers and phishers found their way onto Pinterest, the growing social-network site.",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "The New York Times (archive)"
+    },
+    {
+      "url": "https://www.cbc.ca/news/science/online-banking-encryption-broken-1.1052788",
+      "domain": "www.cbc.ca",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "Online banking encryption broken | CBC News",
+      "description": "Security researchers have developed a potential cyber attack that could decrypt secure communications used by online banking and payment sites.",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "CBC News"
+    },
+    {
+      "url": "https://www.infosecurity-magazine.com/news/russian-brides-attempt-to-thaw-the-ice-for-winter/",
+      "domain": "www.infosecurity-magazine.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "Russian brides attempt to thaw the ice for winter spammers - Infosecurity Magazine",
+      "description": "The latest monthly spam report shows that, regardless of the world economy, there is one item that is particularly hot this winter: Russian mail-order brides. This is according to newly released figures from McAfee.",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "Infosecurity Magazine"
+    },
+    {
+      "url": "https://www.chabad.org/news/article_cdo/aid/1008771/jewish/Security-Report-Details-Brand-Theft.htm",
+      "domain": "www.chabad.org",
+      "status": 403,
+      "verified": true,
+      "trusted": true,
+      "title": "Security Report Details Brand Theft",
+      "description": "",
+      "match_terms_hit": [],
+      "content_type": "text/html",
+      "outlet": "Chabad.org"
+    },
+    {
+      "url": "https://politifact.com/factchecks/2011/jul/17/sheldon-whitehouse/sen-whitehouse-says-criminals-can-hack-home-comput/",
+      "domain": "politifact.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "Sen. Whitehouse says criminals can hack into home computers and spy on victims through video cameras &#8211; PolitiFact",
+      "description": "&quot;Some criminals have learned how to spy on Americans, hacking into our home computers and looking out through the video camera attached to the screen.&quot;",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "PolitiFact"
+    },
+    {
+      "url": "https://xcelevents.swoogo.com/isf2024attendee/session/1904366/threat-mapping-in-texas-%EF%BF%BD-mobile-threat-landscape-2024",
+      "domain": "xcelevents.swoogo.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "Session Details: 2024 Information Security Forum by DIR - Attendee Registration",
+      "description": "",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "Texas DIR Info Security Forum"
+    },
+    {
+      "url": "https://xcelevents.swoogo.com/isf2024attendee/speaker/1079388/adam-wosotowsky",
+      "domain": "xcelevents.swoogo.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "Speaker Details: 2024 Information Security Forum by DIR - Attendee Registration",
+      "description": "",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "Texas DIR Info Security Forum"
+    },
+    {
+      "url": "https://www.nbcnews.com/tech/tech-news/twitter-worm-leads-users-fake-malicious-site-flna125525",
+      "domain": "www.nbcnews.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "Twitter worm leads users to fake and malicious site",
+      "description": "",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "NBC News"
+    },
+    {
+      "url": "https://www.csoonline.com/article/534790/data-protection-unique-malware-samples-broke-the-75-million-mark-in-2011.html",
+      "domain": "www.csoonline.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "Unique Malware Samples Broke the 75 Million Mark in 2011 | CSO Online",
+      "description": "",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "CSO Online"
+    },
+    {
+      "url": "https://www.latimes.com/business/la-xpm-2013-mar-27-la-fi-tn-spamhause-cyberbunker-ddos-attack-20130327-story.html",
+      "domain": "www.latimes.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "Unprecedented cyber attack won&#x27;t slow down the Internet - Los Angeles Times",
+      "description": "Unprecedented cyber attack won&#x27;t slow down the Internet",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "Los Angeles Times"
+    },
+    {
+      "url": "https://www.scworld.com/news/vskimmer-trojan-steals-card-data-on-point-of-sale-systems",
+      "domain": "www.scworld.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "VSkimmer trojan steals card data on point-of-sale systems | news | SC Media",
+      "description": "The trojan was recently a topic of discussion on an underground Russian forum, researchers found.",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "SC World"
+    },
+    {
+      "url": "https://www.cleveland.com/consumeraffairs/2011/02/valentines_day_scams_and_schem.html",
+      "domain": "www.cleveland.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "Valentine&#x27;s Day scams and schemes -- sometimes love stinks: Plain Dealing - cleveland.com",
+      "description": "It&#x27;s not all roses. Valentine&#x27;s Day and dating schemes to avoid.",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "Cleveland.com"
+    },
+    {
+      "url": "https://www.eastbaytimes.com/2012/08/03/virtual-currency-comes-with-real-threats/",
+      "domain": "www.eastbaytimes.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "Virtual currency comes with real threats &#8211; East Bay Times",
+      "description": "Virtual currency comes with real threats",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "East Bay Times"
+    },
+    {
+      "url": "https://www.pcworld.com/article/460036/what_you_should_know_about_grum_and_the_botnet_takedown.html",
+      "domain": "www.pcworld.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "What You Should Know About Grum and the Botnet Takedown | PCWorld",
+      "description": "Grum--the third largest botnet--has been shut down by authorities, but that doesn&#039;t mean the threat isn&#039;t still out there.",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "PCWorld"
+    },
+    {
+      "url": "https://www.cnet.com/news/privacy/windows-dll-bug-hits-dozens-of-apps/",
+      "domain": "www.cnet.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "Windows DLL bug hits dozens of apps - CNET",
+      "description": "A flaw in the way Windows handles dynamic-link library and related files likely affects hundreds of applications and has already been used in malicious attacks in the wild.",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "CNET"
+    },
+    {
+      "url": "https://blog.mi.hdm-stuttgart.de/index.php/2016/09/05/botnets-structural-analysis-functional-principle-and-general-overview/",
+      "domain": "blog.mi.hdm-stuttgart.de",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "Botnets \u2013 Structural analysis, functional principle and general overview | Computer Science Blog @ HdM Stuttgart",
+      "description": "This paper provides an overview on the most important types of botnets in terms of network topology, functional principle as well as a short definition on the subject matter. By exploring the motivation of botnet operators, the reader will gain more insight into business models and course of actions of key players in the field.",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "blog.mi.hdm-stuttgart.de"
+    },
+    {
+      "url": "https://www.researchgate.net/publication/363556120_Graph_neural_networks_and_cross-protocol_analysis_for_detecting_malicious_IP_addresses",
+      "domain": "www.researchgate.net",
+      "status": 403,
+      "verified": true,
+      "trusted": true,
+      "title": "Graph neural networks and cross-protocol analysis for detecting malicious IP addresses (ResearchGate)",
+      "description": "",
+      "match_terms_hit": [],
+      "content_type": "text/html",
+      "outlet": "www.researchgate.net"
+    },
+    {
+      "url": "https://www.isssource.com/huge-ddos-attack-a-new-approach/",
+      "domain": "www.isssource.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "Huge DDoS Attack a New Approach - ISSSource",
+      "description": "A distributed denial-of-service (DDoS) attack using a technique known as DNS reflection has resulted in what security experts are calling the largest DDoS attack to date, which generated traffic volumes of 300G bps, or about three times larger than any known previous attacks. The DDoS attack on Internet blacklist maintainer Spamhaus topped 300G bps, powered [&hellip;]",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "www.isssource.com"
+    },
+    {
+      "url": "https://www.photoxels.com/intel-security-mcafee-labs-2017-threats-predictions-report/",
+      "domain": "www.photoxels.com",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "Intel Security&#8217;s &#8220;McAfee Labs 2017 Threats Predictions Report&#8221;: Predictions Include Ransomware, \u201cDronejackings,\u201d Sophisticated Hardware &#038; Firmware Attacks, Attacks on \u201cSmart Home\u201d IoT Devices &#8211; Photoxels",
+      "description": "The following video presents Securing Tomorrow. Today: Security Pro, Did You Know? (Episode 10): Brandie Claborn interviews Candace Worley The 2017 threats predictions include the following: Ransom\u2026",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "www.photoxels.com"
+    },
+    {
+      "url": "https://timesofmalta.com/article/Stuxnet-like-virus-points-to-new-round-of-cyber-war.391046",
+      "domain": "timesofmalta.com",
+      "status": 403,
+      "verified": true,
+      "trusted": true,
+      "title": "Stuxnet-like virus points to new round of cyber war",
+      "description": "",
+      "match_terms_hit": [],
+      "content_type": "text/html",
+      "outlet": "timesofmalta.com"
+    },
+    {
+      "url": "https://www.techcentral.ie/malware-threats-at-four-year-high-mcafee/",
+      "domain": "www.techcentral.ie",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "TechCentral.ie | Ireland&#039;s technology news resource",
+      "description": "Mobile threat growing but still small",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html",
+      "outlet": "www.techcentral.ie"
+    },
+    {
+      "url": "https://www.semanticscholar.org/paper/The-Current-State-of-Research-on-Reputation-of-Xu-Huang/1190994cfa13dc91058c78ff48da252f9af5e28d",
+      "domain": "www.semanticscholar.org",
+      "status": 202,
+      "verified": true,
+      "trusted": true,
+      "title": "The Current State of Research on Reputation of Malicious IPs",
+      "description": "",
+      "match_terms_hit": [],
+      "content_type": "text/html",
+      "outlet": "www.semanticscholar.org"
+    },
+    {
+      "url": "https://www.botnets.fr/images/b/b5/Wp-new-era-of-botnets.pdf",
+      "domain": "www.botnets.fr",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "White Paper: The New Era of Botnets",
+      "description": "PDF document",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "application/pdf",
+      "outlet": "www.botnets.fr"
+    },
+    {
+      "url": "https://www.milanconsult.de/wp-content/uploads/2022/09/Zimperium_Global_Mobile_Threat_Report_2022.pdf",
+      "domain": "www.milanconsult.de",
+      "status": 200,
+      "verified": true,
+      "trusted": false,
+      "title": "Zimperium Global Mobile Threat Report 2022",
+      "description": "PDF document",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "application/pdf",
+      "outlet": "www.milanconsult.de"
+    }
+  ],
+  "unverified": [
+    {
+      "url": "https://www.slideshare.net/slideshow/2010q1-threats-report/4148175",
+      "domain": "www.slideshare.net",
+      "status": 200,
+      "verified": false,
+      "trusted": false,
+      "title": "McAfee Threats Report - Q1 2010",
+      "description": "",
+      "match_terms_hit": [],
+      "content_type": "text/html",
+      "outlet": "www.slideshare.net"
+    }
+  ]
+}
