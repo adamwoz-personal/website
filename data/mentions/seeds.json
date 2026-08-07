@@ -1,0 +1,63 @@
+{
+  "description": "Seed URLs for Adam Wosotowsky media / PR mentions. URLs in 'seeds' are fetched and only published if the fetched HTML/PDF contains a match_term. URLs in 'trusted' are always published; use this for real pages that bot-block scrapers (IEEE, ResearchGate, Justia, ChabAD, Times of Malta, etc.). Add new interviews/features by appending to the appropriate list.",
+  "match_terms": ["wosotowsky"],
+  "seeds": [
+    "https://xcelevents.swoogo.com/isf2024attendee/speaker/1079388/adam-wosotowsky",
+    "https://xcelevents.swoogo.com/isf2024attendee/session/1904366/threat-mapping-in-texas-%EF%BF%BD-mobile-threat-landscape-2024",
+    "https://www.govtech.com/security/Financial-Breaches-Increase-Amid-Global-Cyber-Crime-Wave-.html",
+    "https://www.crn.com/news/security/229300052/google-android-malware-gets-its-comeuppance-malicious-apps-pulled",
+    "https://www.latimes.com/business/la-fi-spear-phishing-20140521-story.html",
+    "https://www.nbcnews.com/tech/tech-news/twitter-worm-leads-users-fake-malicious-site-flna125525",
+    "https://www.eastbaytimes.com/2012/08/03/virtual-currency-comes-with-real-threats/",
+    "https://abcnews.com/Technology/denial-services-attack-egypt-cord-cutting-slow-internet/story?id=18833827",
+    "https://www.kqed.org/news/85463/experts-warn-users-to-disable-widely-used-java-software",
+    "https://www.botnets.fr/images/b/b5/Wp-new-era-of-botnets.pdf",
+    "https://www.govtech.com/security/Malware-on-the-Rise-Across-Multiple-Devices-and-Platforms-in-2012-Report.html",
+    "https://www.photoxels.com/intel-security-mcafee-labs-2017-threats-predictions-report/",
+    "https://www.infosecurity-magazine.com/news/russian-brides-attempt-to-thaw-the-ice-for-winter/",
+    "https://www.cleveland.com/consumeraffairs/2011/02/valentines_day_scams_and_schem.html",
+    "https://www.pcworld.com/article/460036/what_you_should_know_about_grum_and_the_botnet_takedown.html",
+    "https://www.cbc.ca/news/science/online-banking-encryption-broken-1.1052788",
+    "https://www.asisonline.org/security-management-magazine/articles/2011/08/$00.000025-the-going-rate-on-the-black-market-for-your-email-address/",
+    "https://www.scworld.com/news/vskimmer-trojan-steals-card-data-on-point-of-sale-systems",
+    "https://www.isssource.com/huge-ddos-attack-a-new-approach/",
+    "https://www.latimes.com/business/la-xpm-2013-mar-27-la-fi-tn-spamhause-cyberbunker-ddos-attack-20130327-story.html",
+    "https://www.cio.com/article/282193/security0-mobile-app-security-5-ways-to-protect-your-smartphone.html",
+    "https://www.securityweek.com/global-spam-drops-third-after-rustock-botnet-gets-crushed-symantec-says/",
+    "https://www.foxbusiness.com/features/mcafee-hackers-more-patient-sophisticated-than-ever",
+    "https://www.technewsworld.com/story/encryption-merits-can-be-exaggerated-78433.html",
+    "https://www.mlive.com/news/detroit/2011/05/post_60.html",
+    "https://politifact.com/factchecks/2011/jul/17/sheldon-whitehouse/sen-whitehouse-says-criminals-can-hack-home-comput/",
+    "https://www.techcentral.ie/malware-threats-at-four-year-high-mcafee/",
+    "https://www.csoonline.com/article/534790/data-protection-unique-malware-samples-broke-the-75-million-mark-in-2011.html",
+    "https://www.slideshare.net/slideshow/2010q1-threats-report/4148175",
+    "https://www.cnet.com/news/privacy/windows-dll-bug-hits-dozens-of-apps/",
+    "https://archive.nytimes.com/gadgetwise.blogs.nytimes.com/2012/05/16/now-on-pinterest-scams/",
+    "https://blog.mi.hdm-stuttgart.de/index.php/2016/09/05/botnets-structural-analysis-functional-principle-and-general-overview/",
+    "https://www.milanconsult.de/wp-content/uploads/2022/09/Zimperium_Global_Mobile_Threat_Report_2022.pdf",
+    "https://www.databreachtoday.com/malware-hits-kaisers-research-data-a-6714",
+    "https://www.tomsguide.com/us/how-to-erase-personal-data,news-18034.html"
+  ],
+  "trusted": [
+    "https://patents.justia.com/inventor/adam-wosotowsky",
+    "https://ieeexplore.ieee.org/document/9003003/",
+    "https://www.semanticscholar.org/paper/The-Current-State-of-Research-on-Reputation-of-Xu-Huang/1190994cfa13dc91058c78ff48da252f9af5e28d",
+    "https://www.chabad.org/news/article_cdo/aid/1008771/jewish/Security-Report-Details-Brand-Theft.htm",
+    "https://timesofmalta.com/article/Stuxnet-like-virus-points-to-new-round-of-cyber-war.391046",
+    "https://www.researchgate.net/publication/363556120_Graph_neural_networks_and_cross-protocol_analysis_for_detecting_malicious_IP_addresses"
+  ],
+  "titles": {
+    "https://patents.justia.com/inventor/adam-wosotowsky": "Adam Wosotowsky - Inventions, Patents and Patent Applications",
+    "https://ieeexplore.ieee.org/document/9003003/": "Graph neural networks and cross-protocol analysis for detecting malicious IP addresses (IEEE)",
+    "https://www.semanticscholar.org/paper/The-Current-State-of-Research-on-Reputation-of-Xu-Huang/1190994cfa13dc91058c78ff48da252f9af5e28d": "The Current State of Research on Reputation of Malicious IPs",
+    "https://www.chabad.org/news/article_cdo/aid/1008771/jewish/Security-Report-Details-Brand-Theft.htm": "Security Report Details Brand Theft",
+    "https://timesofmalta.com/article/Stuxnet-like-virus-points-to-new-round-of-cyber-war.391046": "Stuxnet-like virus points to new round of cyber war",
+    "https://www.researchgate.net/publication/363556120_Graph_neural_networks_and_cross-protocol_analysis_for_detecting_malicious_IP_addresses": "Graph neural networks and cross-protocol analysis for detecting malicious IP addresses (ResearchGate)",
+    "https://www.slideshare.net/slideshow/2010q1-threats-report/4148175": "McAfee Threats Report - Q1 2010",
+    "https://www.botnets.fr/images/b/b5/Wp-new-era-of-botnets.pdf": "White Paper: The New Era of Botnets",
+    "https://www.milanconsult.de/wp-content/uploads/2022/09/Zimperium_Global_Mobile_Threat_Report_2022.pdf": "Zimperium Global Mobile Threat Report 2022"
+  }
+}
+
+
+

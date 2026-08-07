@@ -1,0 +1,29 @@
+{
+  "generated_at": "2026-08-07T00:00:00+00:00",
+  "inventor": "Adam Wosotowsky",
+  "count": 2,
+  "patents": [
+    {
+      "publication_number": "US11743276B2",
+      "title": "Methods, systems, articles of manufacture and apparatus for producing generic IP reputation through cross protocol analysis",
+      "snippet": "Cross-protocol analysis of IP telemetry to produce a generic IP reputation score. Signals gathered from one protocol (for example email) are combined with signals from another (for example web) so a unified reputation can inform defenses across channels.",
+      "assignee": "McAfee, LLC",
+      "filing_date": "2021-06-23",
+      "grant_date": "2023-08-29",
+      "priority_date": "2019-07-09",
+      "inventor": "Adam Wosotowsky",
+      "url": "https://patents.google.com/patent/US11743276B2"
+    },
+    {
+      "publication_number": "US11689550B2",
+      "title": "Methods and apparatus to analyze network traffic for malicious activity",
+      "snippet": "Analyzes network traffic to flag likely malicious activity. Extracts features from observed traffic and uses cross-signal analysis to identify connections associated with command-and-control, phishing infrastructure, and other abuse at scale.",
+      "assignee": "McAfee, LLC",
+      "filing_date": "2020-04-24",
+      "grant_date": "2023-06-27",
+      "priority_date": "2020-04-24",
+      "inventor": "Adam Wosotowsky",
+      "url": "https://patents.google.com/patent/US11689550B2"
+    }
+  ]
+}

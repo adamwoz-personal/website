@@ -1,0 +1,242 @@
+#!/usr/bin/env python3
+"""Render static HTML pages for the /adam section from classified data.
+
+Produces:
+  adam/index.html                     - landing hub
+  adam/pr/index.html                  - curated cybersecurity PR portfolio
+  adam/mentions-all/index.html        - unabridged verified mentions
+  adam/patents/index.html             - patents index
+
+All pages are pure static HTML with a shared stylesheet. No JS is required to
+render, minimizing attack surface.
+"""
+
+from __future__ import annotations
+
+import argparse
+import html
+import json
+from datetime import datetime, timezone
+from pathlib import Path
+
+
+HEADER = """<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer-when-downgrade">
+  <title>{title}</title>
+  <link rel="stylesheet" href="/adam/assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="/adam/">Adam&nbsp;Wosotowsky</a>
+      <nav class="nav">
+        <a href="/adam/pr/">Public relations</a>
+        <a href="/adam/patents/">Patents</a>
+        <a href="/adam/mentions-all/">More mentions</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+"""
+
+FOOTER = """  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Generated {generated} &middot; Static HTML only.</p>
+    </div>
+  </footer>
+</body>
+</html>
+"""
+
+
+def page(title: str, body: str) -> str:
+    return (
+        HEADER.format(title=html.escape(title))
+        + body
+        + FOOTER.format(generated=datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"))
+    )
+
+
+def esc(text: str) -> str:
+    return html.escape(text or "")
+
+
+def mention_card(item: dict) -> str:
+    outlet = esc(item.get("outlet") or item.get("domain", ""))
+    title = esc(item.get("title") or item.get("url", ""))
+    description = esc(item.get("description", ""))
+    url = esc(item.get("url", "#"))
+    domain = esc(item.get("domain", ""))
+    desc_html = f'<p class="desc">{description}</p>' if description else ""
+    return f"""
+    <article class="card mention">
+      <div class="outlet">{outlet}</div>
+      <h3><a href="{url}" rel="noopener noreferrer">{title}</a></h3>
+      {desc_html}
+      <p class="src"><a href="{url}" rel="noopener noreferrer">{domain}</a></p>
+    </article>
+"""
+
+
+def patent_card(p: dict) -> str:
+    title = esc(p.get("title", ""))
+    pub = esc(p.get("publication_number", ""))
+    assignee = esc(p.get("assignee", ""))
+    grant = esc(p.get("grant_date", "") or p.get("filing_date", ""))
+    snippet = esc(p.get("snippet", ""))
+    url = esc(p.get("url", "#"))
+    return f"""
+    <article class="card patent">
+      <div class="pub">{pub}</div>
+      <h3><a href="{url}" rel="noopener noreferrer">{title}</a></h3>
+      <p class="desc">{snippet}</p>
+      <p class="meta"><span>Assignee: {assignee}</span> &middot; <span>Grant/Filing: {grant}</span></p>
+    </article>
+"""
+
+
+def build_landing(patents: list[dict], curated_count: int, unabridged_count: int) -> str:
+    patent_summary = "".join(
+        f"""      <li><a href="/adam/patents/#{esc(p['publication_number'])}">
+        <strong>{esc(p['publication_number'])}</strong> &mdash; {esc(p['title'])}
+      </a></li>
+"""
+        for p in patents
+    )
+    return page(
+        "Adam Wosotowsky",
+        f"""
+    <section class="hero">
+      <h1>Adam Wosotowsky</h1>
+      <p class="lead">Threat researcher &middot; cybersecurity public relations &middot; inventor.</p>
+      <p class="lead-sub">Two decades of malware, botnet, and threat-intelligence work quoted across hundreds of press interviews and features. The pages below highlight a curated selection.</p>
+      <div class="hero-tiles">
+        <a class="tile tile-pr" href="/adam/pr/">
+          <span class="tile-label">Public relations</span>
+          <span class="tile-count">{curated_count}+</span>
+          <span class="tile-sub">selected US interviews &amp; features</span>
+        </a>
+        <a class="tile tile-patents" href="/adam/patents/">
+          <span class="tile-label">Patents</span>
+          <span class="tile-count">{len(patents)}</span>
+          <span class="tile-sub">granted U.S. patents</span>
+        </a>
+        <a class="tile tile-all" href="/adam/mentions-all/">
+          <span class="tile-label">More mentions</span>
+          <span class="tile-count">{unabridged_count}+</span>
+          <span class="tile-sub">a broader sample worldwide</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="card patents-preview">
+      <h2>Patents at a glance</h2>
+      <ul class="patent-list">
+{patent_summary}      </ul>
+      <p><a class="more" href="/adam/patents/">See all patents &rarr;</a></p>
+    </section>
+""",
+    )
+
+
+def build_pr(curated: list[dict]) -> str:
+    if not curated:
+        cards = '<p class="empty">No curated interviews are currently listed. Seeds live in <code>data/mentions/seeds.json</code>.</p>'
+    else:
+        cards = "\n".join(mention_card(m) for m in curated)
+    return page(
+        "Cybersecurity public relations",
+        f"""
+    <section class="page-head">
+      <h1>Cybersecurity public relations</h1>
+      <p class="lead">A curated selection from hundreds of interviews, quotes, and features across two decades of cybersecurity press &mdash; focused here on popular US technology and security outlets. See the <a href="/adam/mentions-all/">broader sample</a> for additional references worldwide.</p>
+    </section>
+    <section class="grid">
+      {cards}
+    </section>
+""",
+    )
+
+
+def build_all(mentions: list[dict]) -> str:
+    if not mentions:
+        cards = '<p class="empty">No verified mentions yet.</p>'
+    else:
+        cards = "\n".join(mention_card(m) for m in mentions)
+    return page(
+        "More verified mentions",
+        f"""
+    <section class="page-head">
+      <h1>More verified mentions</h1>
+      <p class="lead">A broader sample of press mentions across languages and regions. This is a working subset of an archive spanning hundreds of interviews, quotes, and citations &mdash; not a comprehensive list.</p>
+    </section>
+    <section class="grid">
+      {cards}
+    </section>
+""",
+    )
+
+
+def build_patents(patents: list[dict]) -> str:
+    if not patents:
+        cards = '<p class="empty">No patents listed.</p>'
+    else:
+        cards = "\n".join(
+            f'<div id="{esc(p["publication_number"])}">{patent_card(p)}</div>' for p in patents
+        )
+    return page(
+        "Patents",
+        f"""
+    <section class="page-head">
+      <h1>Patents</h1>
+      <p class="lead">United States patents where Adam Wosotowsky is listed as an inventor. Data pulled directly from Google Patents.</p>
+    </section>
+    <section class="grid">
+      {cards}
+    </section>
+""",
+    )
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Build /adam site pages.")
+    parser.add_argument("--mentions", default="data/mentions/processed/classified.json")
+    parser.add_argument("--patents", default="data/patents/patents.json")
+    parser.add_argument("--adam-dir", default="adam")
+    return parser.parse_args()
+
+
+def main() -> int:
+    args = parse_args()
+    mentions_path = Path(args.mentions)
+    patents_path = Path(args.patents)
+    mentions = json.loads(mentions_path.read_text(encoding="utf-8")) if mentions_path.exists() else {}
+    patents_payload = json.loads(patents_path.read_text(encoding="utf-8")) if patents_path.exists() else {}
+
+    curated = mentions.get("curated", [])
+    unabridged = mentions.get("unabridged", [])
+    patents = patents_payload.get("patents", [])
+
+    adam_dir = Path(args.adam_dir)
+    (adam_dir / "pr").mkdir(parents=True, exist_ok=True)
+    (adam_dir / "mentions-all").mkdir(parents=True, exist_ok=True)
+    (adam_dir / "patents").mkdir(parents=True, exist_ok=True)
+
+    (adam_dir / "index.html").write_text(
+        build_landing(patents, len(curated), len(unabridged)), encoding="utf-8"
+    )
+    (adam_dir / "pr" / "index.html").write_text(build_pr(curated), encoding="utf-8")
+    (adam_dir / "mentions-all" / "index.html").write_text(build_all(unabridged), encoding="utf-8")
+    (adam_dir / "patents" / "index.html").write_text(build_patents(patents), encoding="utf-8")
+
+    print(f"Built pages in {adam_dir}/ (curated={len(curated)}, all={len(unabridged)}, patents={len(patents)})")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
