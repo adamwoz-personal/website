@@ -3,7 +3,7 @@
     "title": "About Adam",
     "tagline": "Twenty-five years turning noisy security telemetry into clean, actionable protection.",
     "intro": [
-      "I led the data, edge, and application-analysis engineering organizations at Zimperium through early 2026, where I was responsible for how threat telemetry flowed through the company and how it became protection our customers could act on. Before Zimperium I spent a decade at McAfee and Intel as a Research Architect and Data Architect focused on messaging, connection reputation, and malware research.",
+      "I led the data, edge, and application-analysis engineering organizations at Zimperium, where I was responsible for how threat telemetry flowed through the company and how it became protection our customers could act on. Before Zimperium I spent a decade at McAfee and Intel as a Research Architect and Data Architect focused on messaging, connection reputation, and malware research.",
       "The work has always sat at the intersection of three things: large-scale data pipelines, machine-learning classifiers that have to hold up in production, and communicating what threat actors are actually doing to customers, executives, government agencies, and the press. I've been quoted in hundreds of interviews and features, keynoted anti-abuse conferences, taught training courses, chaired principal-engineering committees, and served as an FBI escalation contact.",
       "I hold two U.S. patents on machine-learning techniques for network-security telemetry and I'm a Georgia Tech CS graduate. I currently live in Lilburn, GA."
     ],
