@@ -34,6 +34,8 @@ HEADER = """<!doctype html>
     <div class="wrap header-inner">
       <a class="brand" href="/adam/">Adam&nbsp;Wosotowsky</a>
       <nav class="nav">
+        <a href="/adam/about/">About</a>
+        <a href="/adam/work/">Work</a>
         <a href="/adam/pr/">Public relations</a>
         <a href="/adam/patents/">Patents</a>
         <a href="/adam/mentions-all/">More mentions</a>
@@ -91,7 +93,7 @@ def patent_card(p: dict) -> str:
     snippet = esc(p.get("snippet", ""))
     url = esc(p.get("url", "#"))
     return f"""
-    <article class="card patent">
+    <article class="card patent" id="{pub}">
       <div class="pub">{pub}</div>
       <h3><a href="{url}" rel="noopener noreferrer">{title}</a></h3>
       <p class="desc">{snippet}</p>
@@ -115,6 +117,7 @@ def build_landing(patents: list[dict], curated_count: int, unabridged_count: int
       <h1>Adam Wosotowsky</h1>
       <p class="lead">Threat researcher &middot; cybersecurity public relations &middot; inventor.</p>
       <p class="lead-sub">Two decades of malware, botnet, and threat-intelligence work quoted across hundreds of press interviews and features. The pages below highlight a curated selection.</p>
+      <p class="hero-links"><a href="/adam/about/">Read a short bio &rarr;</a> &middot; <a href="/adam/work/">What I work on &rarr;</a></p>
       <div class="hero-tiles">
         <a class="tile tile-pr" href="/adam/pr/">
           <span class="tile-label">Public relations</span>
@@ -203,10 +206,75 @@ def build_patents(patents: list[dict]) -> str:
     )
 
 
+def build_about(bio: dict) -> str:
+    about = bio.get("about", {})
+    intro_html = "".join(f"      <p>{esc(p)}</p>\n" for p in about.get("intro", []))
+    highlights_html = "".join(f"        <li>{esc(h)}</li>\n" for h in about.get("highlights", []))
+    roles = about.get("roles_summary", "")
+    tagline = esc(about.get("tagline", ""))
+    return page(
+        about.get("title", "About Adam"),
+        f"""
+    <section class="page-head">
+      <h1>About Adam</h1>
+      <p class="lead">{tagline}</p>
+    </section>
+    <section class="card bio-intro">
+{intro_html}    </section>
+    <section class="card bio-highlights">
+      <h2>Highlights</h2>
+      <ul class="bullet-list">
+{highlights_html}      </ul>
+    </section>
+    <section class="card bio-roles">
+      <h2>Roles at a glance</h2>
+      <p>{roles}</p>
+      <p><a class="more" href="/adam/work/">See what I work on &rarr;</a></p>
+    </section>
+""",
+    )
+
+
+def build_work(bio: dict) -> str:
+    work = bio.get("work", {})
+    lead = esc(work.get("lead", ""))
+    sections = work.get("sections", [])
+    section_html_parts = []
+    for s in sections:
+        sid = esc(s.get("id", ""))
+        heading = esc(s.get("heading", ""))
+        body_html = "".join(f"      <p>{p}</p>\n" for p in s.get("body", []))
+        refs = s.get("patent_refs") or []
+        refs_html = ""
+        if refs:
+            links = " &middot; ".join(
+                f'<a href="/adam/patents/#{esc(r)}">{esc(r)}</a>' for r in refs
+            )
+            refs_html = f'      <p class="meta">Related patents: {links}</p>\n'
+        section_html_parts.append(
+            f"""    <section class="card work-section" id="{sid}">
+      <h2>{heading}</h2>
+{body_html}{refs_html}    </section>
+"""
+        )
+    sections_html = "\n".join(section_html_parts)
+    return page(
+        work.get("title", "What I work on"),
+        f"""
+    <section class="page-head">
+      <h1>What I work on</h1>
+      <p class="lead">{lead}</p>
+    </section>
+{sections_html}
+""",
+    )
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Build /adam site pages.")
     parser.add_argument("--mentions", default="data/mentions/processed/classified.json")
     parser.add_argument("--patents", default="data/patents/patents.json")
+    parser.add_argument("--bio", default="data/bio/bio.json")
     parser.add_argument("--adam-dir", default="adam")
     return parser.parse_args()
 
@@ -215,14 +283,18 @@ def main() -> int:
     args = parse_args()
     mentions_path = Path(args.mentions)
     patents_path = Path(args.patents)
+    bio_path = Path(args.bio)
     mentions = json.loads(mentions_path.read_text(encoding="utf-8")) if mentions_path.exists() else {}
     patents_payload = json.loads(patents_path.read_text(encoding="utf-8")) if patents_path.exists() else {}
+    bio = json.loads(bio_path.read_text(encoding="utf-8")) if bio_path.exists() else {}
 
     curated = mentions.get("curated", [])
     unabridged = mentions.get("unabridged", [])
     patents = patents_payload.get("patents", [])
 
     adam_dir = Path(args.adam_dir)
+    (adam_dir / "about").mkdir(parents=True, exist_ok=True)
+    (adam_dir / "work").mkdir(parents=True, exist_ok=True)
     (adam_dir / "pr").mkdir(parents=True, exist_ok=True)
     (adam_dir / "mentions-all").mkdir(parents=True, exist_ok=True)
     (adam_dir / "patents").mkdir(parents=True, exist_ok=True)
@@ -230,11 +302,16 @@ def main() -> int:
     (adam_dir / "index.html").write_text(
         build_landing(patents, len(curated), len(unabridged)), encoding="utf-8"
     )
+    (adam_dir / "about" / "index.html").write_text(build_about(bio), encoding="utf-8")
+    (adam_dir / "work" / "index.html").write_text(build_work(bio), encoding="utf-8")
     (adam_dir / "pr" / "index.html").write_text(build_pr(curated), encoding="utf-8")
     (adam_dir / "mentions-all" / "index.html").write_text(build_all(unabridged), encoding="utf-8")
     (adam_dir / "patents" / "index.html").write_text(build_patents(patents), encoding="utf-8")
 
-    print(f"Built pages in {adam_dir}/ (curated={len(curated)}, all={len(unabridged)}, patents={len(patents)})")
+    print(
+        f"Built pages in {adam_dir}/ (curated={len(curated)}, all={len(unabridged)}, "
+        f"patents={len(patents)}, bio={'yes' if bio else 'no'})"
+    )
     return 0
 
 

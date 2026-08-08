@@ -35,7 +35,14 @@ below literally. If a rule below conflicts with your own inference,
    verification gate approved.
 3. Never call the mention lists complete. They are curated selections
    from hundreds. Always add `+` to visible tile counts.
-4. Static HTML only. No client JavaScript in `/adam`.
+4. **Site color palette is Georgia Tech-inspired: black + gold with
+   navy and red accents.** Do not reintroduce pastel purple/pink/teal.
+   CSS variables to use: `--gt-black`, `--gt-gold`, `--gt-gold-bright`,
+   `--gt-navy`, `--gt-red`. Gradients: `--grad-gold`, `--grad-navy`,
+   `--grad-red`.
+5. **Static HTML preferred; light JS allowed.** Small vanilla JS is
+   fine for chat widgets, dropdowns, etc. No frameworks, no CDN
+   dependencies, no trackers.
 5. Change page copy in `build_site.py`, not in the generated HTML.
 
 ### How this repo publishes content (canonical, do not deviate)
@@ -143,8 +150,11 @@ than guess site copy, curation criteria, or which URLs to add.
 
 ## Security and reliability lessons
 
-1. Static HTML only for published pages. No client-side JavaScript in the
-   `/adam` section, so there is no unpatched runtime attack surface.
+1. Static HTML is the default for pages under `adam/`. Small,
+   purposeful JavaScript is permitted (chat widget, dropdown, copy
+   button) as long as: no frameworks, no external CDNs, no trackers,
+   and the JS stays small (a few KB per page). Keep the site low
+   attack-surface. Never introduce a JS build pipeline or bundler.
 2. `rel="noopener noreferrer"` on all outbound links.
 3. `Referrer-Policy: no-referrer-when-downgrade` via meta tag.
 4. Never publish `unverified` mentions - the "verified" gate is the whole
@@ -163,8 +173,8 @@ than guess site copy, curation criteria, or which URLs to add.
    verify them - LLMs commonly hallucinate URLs that 404.
 4. Do not scrape Wayback CDX or Google Scholar in a tight loop; both will
    throttle and return HTML challenges.
-5. Do not add hero content that requires client JavaScript. Keep the site
-   static.
+5. Do not add hero content that requires a JS framework. Small vanilla
+   JS is OK; do not introduce React/Vue/Svelte/etc.
 6. Do not describe the mention lists as exhaustive. The curated page is a
    selection; the "more mentions" page is a broader sample; the archive
    itself spans hundreds of items and is not fully represented here.

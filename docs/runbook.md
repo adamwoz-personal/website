@@ -23,8 +23,13 @@ literally. When in doubt, do the smaller, safer thing and ask the user.
    Copy must use words like "curated selection", "a broader sample",
    "highlighted from hundreds of..." Numeric counts on tiles must include
    a trailing `+` (e.g. `31+`).
-4. **Static HTML only.** No client-side JavaScript in anything under
-   `adam/`. No inline `<script>`. No third-party widgets. No trackers.
+4. **Static HTML preferred, light JS allowed.** Static HTML is still the
+   default for anything under `adam/`. Small, purposeful JavaScript is OK
+   (e.g. a chat widget, a lightweight dropdown, a copy-to-clipboard
+   button) as long as: no frameworks, no external CDN dependencies, no
+   trackers, and the JS is well under a few KB per page. When in doubt,
+   don't add JS — but a single small script per page is not a policy
+   violation.
 5. **All outbound links** must include `rel="noopener noreferrer"`.
 6. **Never publish `unverified` entries** from `classified.json`. If the
    user wants a bot-blocked page published, they will add it to the

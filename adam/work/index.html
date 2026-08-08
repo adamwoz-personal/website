@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer-when-downgrade">
+  <title>What I work on</title>
+  <link rel="stylesheet" href="/adam/assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="/adam/">Adam&nbsp;Wosotowsky</a>
+      <nav class="nav">
+        <a href="/adam/about/">About</a>
+        <a href="/adam/work/">Work</a>
+        <a href="/adam/pr/">Public relations</a>
+        <a href="/adam/patents/">Patents</a>
+        <a href="/adam/mentions-all/">More mentions</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+
+    <section class="page-head">
+      <h1>What I work on</h1>
+      <p class="lead">A tour of the technical areas I&#x27;ve spent the most time on. Each section is grounded in shipping systems, patents, and press coverage where available.</p>
+    </section>
+    <section class="card work-section" id="reputation">
+      <h2>IP and domain reputation at internet scale</h2>
+      <p>At Intel and McAfee I owned the data pipelines and classifiers behind global IP and domain reputation feeds. In steady state that meant ~30 million IP blocks and ~200,000 domain blocks published every year, feeding firewalls, email gateways, and endpoint products worldwide. The engineering challenge was less about volume and more about signal quality: making sure the blocks we published were correct enough that customer help desks did not drown in false-positive tickets.</p>
+      <p>A big part of the work was replacing external reputation feeds with internally generated intelligence, which cut third-party data costs while giving us more control over precision and coverage. Patent US 11,743,276 grew out of this line of work: combining cross-protocol signals into a single reputation score that is more robust to any one channel being poisoned.</p>
+      <p class="meta">Related patents: <a href="/adam/patents/#US11743276B2">US11743276B2</a></p>
+    </section>
+
+    <section class="card work-section" id="botnets">
+      <h2>Botnet analysis and takedowns</h2>
+      <p>Much of my early classifier work targeted the largest email-sending botnets of the era &mdash; Rustock, Grum, Cutwail, Kelihos, and their descendants. I contributed to takedown-adjacent analysis, wrote the classifiers that recognized their traffic in the wild, and spoke to the press regularly as those campaigns collapsed and reorganized.</p>
+      <p>The lesson that has stuck with me: takedowns are a punctuation mark in a much longer story. Real, durable protection comes from telemetry pipelines that keep pace with attackers as they migrate infrastructure, not from any single legal or technical action.</p>
+    </section>
+
+    <section class="card work-section" id="malicious-ip-ml">
+      <h2>Machine-learning classifiers for malicious traffic</h2>
+      <p>Building ML classifiers that hold up in production security is a different discipline from building them in a notebook. Attackers actively adapt to your model; feature drift is adversarial, not just statistical. I spent years doing feature engineering for messaging, connection, and domain classifiers &mdash; and, importantly, building the internal tooling that let researchers iterate on those features quickly against fresh telemetry.</p>
+      <p>Patent US 11,689,550 covers one line of that work: analyzing malicious network traffic in a way that generalizes across attack families rather than overfitting to any single campaign. The internal research portal I built at McAfee &mdash; unifying disparate data sources behind one query interface &mdash; is what made that kind of iteration practical for the team.</p>
+      <p class="meta">Related patents: <a href="/adam/patents/#US11689550B2">US11689550B2</a></p>
+    </section>
+
+    <section class="card work-section" id="mobile">
+      <h2>Mobile threat intelligence</h2>
+      <p>At Zimperium the work shifts to mobile: on-device detection and cloud-side analytics for iOS and Android threats, from malicious apps and phishing to network-layer attacks. I lead the data, edge, and application-analysis engineering teams that turn on-device telemetry into intelligence customers can actually operationalize &mdash; including a full uplift of the datacenter footprint from physical Rackspace infrastructure to virtualized Oracle, and a new generation of edge delivery systems that get threat intelligence out to customer consoles in near real time.</p>
+      <p>I chair the Principal Engineering Committee, which is where we align long-term technical priorities across the org, and I'm the executive-level escalation contact for threat analysis on strategic accounts.</p>
+    </section>
+
+    <section class="card work-section" id="messaging-abuse">
+      <h2>Messaging abuse: spam, phishing, and email fraud</h2>
+      <p>Spam and phishing are where I cut my teeth. From CipherTrust and Secure Computing through McAfee, I've written and maintained anti-spam classifiers, spearphishing detection heuristics, and connection-reputation systems that fed the email-security products of that era. I designed and produced the complete anti-spam configuration for the IronMail appliance, ran zero-day fixes, and trained engineers on the backend systems and UNIX internals that kept it running.</p>
+      <p>This is also where the public-relations side of my career started. Editors and reporters need someone who can explain a new phishing wave, a spoofed-brand campaign, or a botnet flare-up in plain language on deadline. I've done that a lot.</p>
+    </section>
+
+    <section class="card work-section" id="public-relations">
+      <h2>Talking to the press, customers, and government</h2>
+      <p>For seven of my nine years on the McAfee PR team I sat on the steering committee. I've delivered keynote talks on future threat trends, taught training courses at conferences, presented on eleven-plus panels, and been quoted in hundreds of press interviews from CNN, ABC News, and the LA Times through IEEE, security-industry trades, and international outlets.</p>
+      <p>The through-line: security only becomes protective when it's communicated well. A great classifier that no one understands is a lawsuit waiting to happen; a well-explained one earns the trust that keeps customers deploying it. See the <a href="/adam/pr/">public relations page</a> for a curated selection.</p>
+    </section>
+
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Generated 2026-08-08 15:13 UTC &middot; Static HTML only.</p>
+    </div>
+  </footer>
+</body>
+</html>
