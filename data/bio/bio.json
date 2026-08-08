@@ -112,5 +112,100 @@
         "press_terms": []
       }
     ]
+  },
+  "looking_for": {
+    "title": "What I'm looking for",
+    "body": [
+      "A leadership role that revolves around sifting data for threats, building pipelines for the data those investigations run on, and working with highly motivated individual team members. I care about the whole loop &mdash; from raw telemetry, through the classifiers and reputation systems that turn it into protection, to the customer-facing story that explains why it matters."
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "lead": "The best way to reach me is email. I read it daily.",
+    "channels": [
+      {
+        "label": "Email",
+        "value": "adam.wosotowsky@gmail.com",
+        "href": "mailto:adam.wosotowsky@gmail.com"
+      },
+      {
+        "label": "LinkedIn",
+        "value": "linkedin.com/in/adamwosotowsky",
+        "href": "https://www.linkedin.com/in/adamwosotowsky"
+      },
+      {
+        "label": "Location",
+        "value": "Lilburn, GA — just outside the perimeter, northeast of Atlanta",
+        "href": null
+      },
+      {
+        "label": "Resume",
+        "value": "Download PDF",
+        "href": "/adam/resume.pdf"
+      }
+    ],
+    "notes": [
+      "Email is the fastest path. For anything time-sensitive, LinkedIn works too."
+    ]
+  },
+  "speaking": {
+    "title": "Speaking, teaching, and community",
+    "lead": "A partial record of the conferences, courses, and communities I've contributed to over the years.",
+    "sections": [
+      {
+        "heading": "M3AAWG — Messaging, Mobile, Malware Anti-Abuse Working Group",
+        "body": [
+          "M3AAWG is the venue I've contributed to most consistently. Over multiple sessions I've presented on email-related threat intelligence, telemetry design, and how to combine third-party data with in-house feeds so that machine-learning classifiers and reputation systems make the most of every signal. I've also served on the M3AAWG GDPR working group.",
+          "The M3AAWG audience is other practitioners &mdash; ISPs, mailbox providers, security vendors, and law enforcement liaisons &mdash; which makes it a good forum for technical detail rather than product talks."
+        ]
+      },
+      {
+        "heading": "NCFTA — National Cyber-Forensics and Training Alliance",
+        "body": [
+          "The NCFTA is the teaching and industry-outreach arm affiliated with the FBI's cyber research work. I've given multiple presentations at NCFTA-adjacent security conferences on threat-intelligence topics."
+        ]
+      },
+      {
+        "heading": "Texas ISF — Information Security Forum",
+        "body": [
+          "Most recently I presented on mobile threat intelligence at the Texas ISF, covering how on-device telemetry can be turned into actionable protection for enterprise mobility programs."
+        ]
+      },
+      {
+        "heading": "Training courses I've taught",
+        "body": [
+          "I've taught multi-session courses on using Linux and the UNIX shell to surface anomalies in logs and raw data &mdash; practical, hands-on material for analysts who want to reach for grep, awk, jq, and a well-placed sort before they reach for a dashboard.",
+          "I've also taken (and put to work) multiple courses on running meetings and facilitating groups through brainstorming into actionable outcomes. That skill compounds; it is genuinely why the technical work ships."
+        ]
+      }
+    ],
+    "closing": "I have almost certainly forgotten to list a conference or two here. If we've shared a stage or a hallway conversation, feel free to remind me."
+  },
+  "philosophy": {
+    "title": "Philosophy",
+    "lead": "Two short essays on how I think about the field: agentic AI in engineering organizations, and how I try to manage the humans doing the work.",
+    "essays": [
+      {
+        "id": "agentic-ai",
+        "heading": "Agentic AI in engineering",
+        "body": [
+          "In the early days of the “AI Revolution” the common theme seemed to be executives pushing engineers to “integrate AI into their workflows.” The problem with that framing was that the AI at the time was little better than a Google search. It could reasonably put you in the ballpark of an answer, but it was nowhere near consistent or accurate enough to be a real solution.",
+          "As the tooling progressed, many organizations saw agentic AI as a way to save money through low-cost, entry-level developers leveraging AI to increase their productivity. The problem with that line of thinking is that when you already have a magic wand equivalent to a thousand entry-level developers, turning it into a thousand-and-one entry-level developers by hiring a low-cost lead does not actually produce anything more than thousands and thousands of lines of what has been termed “AI workslop.”",
+          "The reality is that as agentic AI continues to develop, it increases the value of institutional knowledge, an understanding of modular and incremental best practices, and patient managers familiar with overall engineering structure. The goal of leadership in an AI-centered engineering environment is to cultivate that long-term institutional knowledge, protect the best practices that run from design to delivery, and create an employee culture of cooperation and the free flow of ideas.",
+          "The wild pendulum of decisions driven by headline hype and a lack of hands-on experience does not reflect the real power of an AI-centered production organization. Real leverage shows up when you pair experienced engineers with capable tools and give them room to think."
+        ]
+      },
+      {
+        "id": "management",
+        "heading": "How I manage",
+        "body": [
+          "Employees should feel a deep sense of belonging and respect in the jobs they work in. Friendships should be encouraged, teamwork expected. As a manager I'm not only concerned with the production of my employees and clearing the path to their business goals; I'm concerned about their lives outside of work, and I'll often provide guidance ranging from financial questions, to relationships, to philosophizing about how to live a better life.",
+          "When leading teams I want developers to see me as someone who helps them do their job, not someone who interrogates or micromanages their tasks. I want to hear their complaints on all things, and once digested I will make the changes I can or voice solutions up my chain of command.",
+          "At every step of developing an engineering artifact there is room for creativity and effort. Employees are not cogs in a machine that can be arbitrarily moved around to support different efforts at the same weight. That was true before agentic AI came into the picture, and with the growing importance of experience and institutional knowledge it is even more true today.",
+          "A careful balance has to be struck between telling people what to do and working with people to develop a plan of what to do. A development plan built without the consultation of senior engineers is not a good plan. We are all creative artists in our area of expertise, and no single human being should expect they can replicate that expertise so well as to be able to micromanage every aspect of a plan or its implementation.",
+          "Some days things just aren't working out at all, and you know your self-production is in a ditch. Some other days you're hitting on all cylinders like a computer deity. When your mind is in its highest state of productivity, I want that mania of results to benefit the organization. This may mean that some days you work more than your scheduled time, because you know you can work less when you need to get your focus back. As professional computer nerds, I expect employees to work with me to find the most productive balance of life and work. It is my job to protect that balance across their life and career."
+        ]
+      }
+    ]
   }
 }

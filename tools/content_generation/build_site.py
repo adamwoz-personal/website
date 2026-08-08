@@ -45,9 +45,11 @@ HEADER = """<!doctype html>
       <nav class="nav">
         <a href="/adam/about/">About</a>
         <a href="/adam/work/">Work</a>
+        <a href="/adam/philosophy/">Philosophy</a>
+        <a href="/adam/speaking/">Speaking</a>
         <a href="/adam/pr/">Public relations</a>
         <a href="/adam/patents/">Patents</a>
-        <a href="/adam/mentions-all/">More mentions</a>
+        <a href="/adam/contact/">Contact</a>
       </nav>
     </div>
   </header>
@@ -137,7 +139,7 @@ def build_landing(patents: list[dict], curated_count: int, unabridged_count: int
       <h1>Adam Wosotowsky</h1>
       <p class="lead">Threat researcher &middot; engineering leader &middot; inventor.</p>
       <p class="lead-sub">Two decades of malware, botnet, and threat-intelligence work quoted across hundreds of press interviews and features. The pages below highlight a curated selection.</p>
-      <p class="hero-links"><a href="/adam/about/">Read a short bio &rarr;</a> &middot; <a href="/adam/work/">What I work on &rarr;</a> &middot; <a href="/adam/resume.pdf">Resume (PDF) &darr;</a></p>
+      <p class="hero-links"><a href="/adam/about/">Read a short bio &rarr;</a> &middot; <a href="/adam/work/">What I work on &rarr;</a> &middot; <a href="/adam/philosophy/">Philosophy &rarr;</a> &middot; <a href="/adam/contact/">Contact &rarr;</a> &middot; <a href="/adam/resume.pdf">Resume (PDF) &darr;</a></p>
       <div class="hero-tiles">
         <a class="tile tile-pr" href="/adam/pr/">
           <span class="tile-label">Public relations</span>
@@ -232,6 +234,7 @@ def build_about(bio: dict) -> str:
     highlights_html = "".join(f"        <li>{esc(h)}</li>\n" for h in about.get("highlights", []))
     roles = about.get("roles_summary", "")
     tagline = esc(about.get("tagline", ""))
+    looking_html = build_looking_for_card(bio)
     return page(
         about.get("title", "About Adam"),
         f"""
@@ -251,7 +254,113 @@ def build_about(bio: dict) -> str:
       <p>{roles}</p>
       <p><a class="more" href="/adam/work/">See what I work on &rarr;</a> &middot; <a class="more" href="/adam/resume.pdf">Download resume (PDF) &darr;</a></p>
     </section>
+{looking_html}""",
+        description=tagline,
+        path="/adam/about/",
+    )
+
+
+def build_looking_for_card(bio: dict) -> str:
+    lf = bio.get("looking_for") or {}
+    if not lf:
+        return ""
+    body_html = "".join(f"      <p>{p}</p>\n" for p in lf.get("body", []))
+    return f"""    <section class="card bio-looking">
+      <h2>{esc(lf.get('title', "What I'm looking for"))}</h2>
+{body_html}      <p><a class="more" href="/adam/contact/">Get in touch &rarr;</a></p>
+    </section>
+"""
+
+
+def build_philosophy(bio: dict) -> str:
+    ph = bio.get("philosophy") or {}
+    lead = esc(ph.get("lead", ""))
+    essays = ph.get("essays", [])
+    parts = []
+    for e in essays:
+        eid = esc(e.get("id", ""))
+        heading = esc(e.get("heading", ""))
+        body_html = "".join(f"      <p>{p}</p>\n" for p in e.get("body", []))
+        parts.append(
+            f"""    <section class="card essay" id="{eid}">
+      <h2>{heading}</h2>
+{body_html}    </section>
+"""
+        )
+    essays_html = "\n".join(parts)
+    return page(
+        ph.get("title", "Philosophy"),
+        f"""
+    <section class="page-head">
+      <h1>Philosophy</h1>
+      <p class="lead">{lead}</p>
+    </section>
+{essays_html}""",
+        description=ph.get("lead", ""),
+        path="/adam/philosophy/",
+    )
+
+
+def build_speaking(bio: dict) -> str:
+    sp = bio.get("speaking") or {}
+    lead = esc(sp.get("lead", ""))
+    closing = esc(sp.get("closing", ""))
+    sections = sp.get("sections", [])
+    parts = []
+    for s in sections:
+        heading = esc(s.get("heading", ""))
+        body_html = "".join(f"      <p>{p}</p>\n" for p in s.get("body", []))
+        parts.append(
+            f"""    <section class="card speaking-section">
+      <h2>{heading}</h2>
+{body_html}    </section>
+"""
+        )
+    sections_html = "\n".join(parts)
+    closing_html = f'    <p class="closing-note">{closing}</p>\n' if closing else ""
+    return page(
+        sp.get("title", "Speaking"),
+        f"""
+    <section class="page-head">
+      <h1>Speaking, teaching, and community</h1>
+      <p class="lead">{lead}</p>
+    </section>
+{sections_html}{closing_html}""",
+        description=sp.get("lead", ""),
+        path="/adam/speaking/",
+    )
+
+
+def build_contact(bio: dict) -> str:
+    c = bio.get("contact") or {}
+    lead = esc(c.get("lead", ""))
+    rows = []
+    for ch in c.get("channels", []):
+        label = esc(ch.get("label", ""))
+        value = esc(ch.get("value", ""))
+        href = ch.get("href")
+        if href:
+            row_val = f'<a href="{esc(href)}"' + (' rel="noopener noreferrer"' if href.startswith("http") else "") + f'>{value}</a>'
+        else:
+            row_val = value
+        rows.append(f'      <li><span class="ch-label">{label}</span><span class="ch-value">{row_val}</span></li>')
+    channels_html = "\n".join(rows)
+    notes_html = "".join(f'      <p class="note">{esc(n)}</p>\n' for n in c.get("notes", []))
+    return page(
+        c.get("title", "Contact"),
+        f"""
+    <section class="page-head">
+      <h1>Contact</h1>
+      <p class="lead">{lead}</p>
+    </section>
+    <section class="card contact-card">
+      <ul class="contact-list">
+{channels_html}
+      </ul>
+{notes_html}    </section>
 """,
+        description=c.get("lead", ""),
+        path="/adam/contact/",
     )
 
 
@@ -313,17 +422,17 @@ def main() -> int:
     patents = patents_payload.get("patents", [])
 
     adam_dir = Path(args.adam_dir)
-    (adam_dir / "about").mkdir(parents=True, exist_ok=True)
-    (adam_dir / "work").mkdir(parents=True, exist_ok=True)
-    (adam_dir / "pr").mkdir(parents=True, exist_ok=True)
-    (adam_dir / "mentions-all").mkdir(parents=True, exist_ok=True)
-    (adam_dir / "patents").mkdir(parents=True, exist_ok=True)
+    for sub in ("about", "work", "philosophy", "speaking", "contact", "pr", "mentions-all", "patents"):
+        (adam_dir / sub).mkdir(parents=True, exist_ok=True)
 
     (adam_dir / "index.html").write_text(
         build_landing(patents, len(curated), len(unabridged)), encoding="utf-8"
     )
     (adam_dir / "about" / "index.html").write_text(build_about(bio), encoding="utf-8")
     (adam_dir / "work" / "index.html").write_text(build_work(bio), encoding="utf-8")
+    (adam_dir / "philosophy" / "index.html").write_text(build_philosophy(bio), encoding="utf-8")
+    (adam_dir / "speaking" / "index.html").write_text(build_speaking(bio), encoding="utf-8")
+    (adam_dir / "contact" / "index.html").write_text(build_contact(bio), encoding="utf-8")
     (adam_dir / "pr" / "index.html").write_text(build_pr(curated), encoding="utf-8")
     (adam_dir / "mentions-all" / "index.html").write_text(build_all(unabridged), encoding="utf-8")
     (adam_dir / "patents" / "index.html").write_text(build_patents(patents), encoding="utf-8")
