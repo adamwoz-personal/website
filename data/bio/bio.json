@@ -3,14 +3,15 @@
     "title": "About Adam",
     "tagline": "Twenty-five years turning noisy security telemetry into clean, actionable protection.",
     "intro": [
-      "I lead the data, edge, and application-analysis engineering organizations at Zimperium, where I'm responsible for how threat telemetry flows through the company and how it becomes protection our customers can act on. Before Zimperium I spent a decade at McAfee and Intel as a Research Architect and Data Architect focused on messaging, connection reputation, and malware research.",
+      "I led the data, edge, and application-analysis engineering organizations at Zimperium through early 2026, where I was responsible for how threat telemetry flowed through the company and how it became protection our customers could act on. Before Zimperium I spent a decade at McAfee and Intel as a Research Architect and Data Architect focused on messaging, connection reputation, and malware research.",
       "The work has always sat at the intersection of three things: large-scale data pipelines, machine-learning classifiers that have to hold up in production, and communicating what threat actors are actually doing to customers, executives, government agencies, and the press. I've been quoted in hundreds of interviews and features, keynoted anti-abuse conferences, taught training courses, chaired principal-engineering committees, and served as an FBI escalation contact.",
       "I hold two U.S. patents on machine-learning techniques for network-security telemetry and I'm a Georgia Tech CS graduate. I currently live in Lilburn, GA."
     ],
     "highlights": [
-      "25+ years in the security ecosystem: from L3 support to Principal Data Architect.",
+      "Steady climb over 25+ years in the security ecosystem: L3 Support &rarr; Principal Engineer &rarr; Data Architect &rarr; Research Architect &rarr; Principal Data Architect.",
       "Two granted U.S. patents on network-security machine learning (see /adam/patents/).",
-      "Personally responsible for ~30M IP and ~200K domain reputation blocks per year at Intel/McAfee.",
+      "Leadership and management have been a constant &mdash; from organizing cross-team working groups as an L3 support engineer, through Principal Engineer at McAfee, to running the Data, Edge, and Application Analysis engineering organizations at Zimperium and chairing the Principal Engineering Committee.",
+      "Personally responsible for ~30M IP and ~200K domain reputation blocks per year at Intel/McAfee, driven by dedicated threat-hunting rather than passive feeds.",
       "7 years on the McAfee Public Relations steering team; hundreds of press placements across blogs, threat reports, magazine interviews, podcasts, and TV.",
       "11+ conference presentations and 2 keynote talks on future-threat prediction; 4 conference training courses delivered.",
       "FBI escalation contact; M3AAWG GDPR working-group contributor.",
@@ -26,7 +27,7 @@
         "id": "reputation",
         "heading": "IP and domain reputation at internet scale",
         "body": [
-          "At Intel and McAfee I owned the data pipelines and classifiers behind global IP and domain reputation feeds. In steady state that meant ~30 million IP blocks and ~200,000 domain blocks published every year, feeding firewalls, email gateways, and endpoint products worldwide. The engineering challenge was less about volume and more about signal quality: making sure the blocks we published were correct enough that customer help desks did not drown in false-positive tickets.",
+          "At Intel and McAfee I owned the data pipelines, classifiers, and threat-hunting practice behind global IP and domain reputation feeds. In steady state that meant ~30 million IP blocks and ~200,000 domain blocks published every year, feeding firewalls, email gateways, and endpoint products worldwide. Those numbers didn't come from passively ingesting third-party lists &mdash; they came from active threat hunting: pivoting on telemetry signals, chasing infrastructure across protocols, and building the classifiers that turned each hunt into durable, published protection. The engineering challenge was less about volume and more about signal quality: making sure the blocks we published were correct enough that customer help desks did not drown in false-positive tickets.",
           "A big part of the work was replacing external reputation feeds with internally generated intelligence, which cut third-party data costs while giving us more control over precision and coverage. Patent US 11,743,276 grew out of this line of work: combining cross-protocol signals into a single reputation score that is more robust to any one channel being poisoned."
         ],
         "patent_refs": ["US11743276B2"],

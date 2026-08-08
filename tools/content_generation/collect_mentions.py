@@ -54,8 +54,12 @@ TAG_RE = re.compile(r"<[^>]+>")
 WS_RE = re.compile(r"\s+")
 
 
+import html as html_lib
+
+
 def clean(text: str) -> str:
     text = TAG_RE.sub(" ", text)
+    text = html_lib.unescape(text)
     return WS_RE.sub(" ", text).strip()
 
 
