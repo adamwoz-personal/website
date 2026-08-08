@@ -27,7 +27,16 @@ HEADER = """<!doctype html>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="referrer" content="no-referrer-when-downgrade">
   <title>{title}</title>
+  <meta name="description" content="{description}">
   <link rel="stylesheet" href="/adam/assets/styles.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="/adam/assets/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/adam/assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{title}">
+  <meta property="og:description" content="{description}">
+  <meta property="og:image" content="https://wosotowsky.org/adam/assets/og-card.png">
+  <meta property="og:url" content="https://wosotowsky.org{path}">
+  <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
   <header class="site-header">
@@ -56,9 +65,17 @@ FOOTER = """  </main>
 """
 
 
-def page(title: str, body: str) -> str:
+def page(title: str, body: str, description: str = "", path: str = "/adam/") -> str:
+    default_desc = (
+        "Adam Wosotowsky: threat researcher, engineering leader, inventor. "
+        "Two decades of cybersecurity work in malware, botnets, and threat intelligence."
+    )
     return (
-        HEADER.format(title=html.escape(title))
+        HEADER.format(
+            title=html.escape(title),
+            description=html.escape(description or default_desc),
+            path=html.escape(path),
+        )
         + body
         + FOOTER.format(generated=datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"))
     )
@@ -91,12 +108,15 @@ def patent_card(p: dict) -> str:
     assignee = esc(p.get("assignee", ""))
     grant = esc(p.get("grant_date", "") or p.get("filing_date", ""))
     snippet = esc(p.get("snippet", ""))
+    long_desc = p.get("long_description", "")  # may contain safe inline entities
     url = esc(p.get("url", "#"))
+    long_html = f'<p class="long-desc">{long_desc}</p>' if long_desc else ""
     return f"""
     <article class="card patent" id="{pub}">
       <div class="pub">{pub}</div>
       <h3><a href="{url}" rel="noopener noreferrer">{title}</a></h3>
       <p class="desc">{snippet}</p>
+      {long_html}
       <p class="meta"><span>Assignee: {assignee}</span> &middot; <span>Grant/Filing: {grant}</span></p>
     </article>
 """
@@ -115,9 +135,9 @@ def build_landing(patents: list[dict], curated_count: int, unabridged_count: int
         f"""
     <section class="hero">
       <h1>Adam Wosotowsky</h1>
-      <p class="lead">Threat researcher &middot; cybersecurity public relations &middot; inventor.</p>
+      <p class="lead">Threat researcher &middot; engineering leader &middot; inventor.</p>
       <p class="lead-sub">Two decades of malware, botnet, and threat-intelligence work quoted across hundreds of press interviews and features. The pages below highlight a curated selection.</p>
-      <p class="hero-links"><a href="/adam/about/">Read a short bio &rarr;</a> &middot; <a href="/adam/work/">What I work on &rarr;</a></p>
+      <p class="hero-links"><a href="/adam/about/">Read a short bio &rarr;</a> &middot; <a href="/adam/work/">What I work on &rarr;</a> &middot; <a href="/adam/resume.pdf">Resume (PDF) &darr;</a></p>
       <div class="hero-tiles">
         <a class="tile tile-pr" href="/adam/pr/">
           <span class="tile-label">Public relations</span>
@@ -229,7 +249,7 @@ def build_about(bio: dict) -> str:
     <section class="card bio-roles">
       <h2>Roles at a glance</h2>
       <p>{roles}</p>
-      <p><a class="more" href="/adam/work/">See what I work on &rarr;</a></p>
+      <p><a class="more" href="/adam/work/">See what I work on &rarr;</a> &middot; <a class="more" href="/adam/resume.pdf">Download resume (PDF) &darr;</a></p>
     </section>
 """,
     )

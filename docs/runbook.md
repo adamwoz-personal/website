@@ -54,21 +54,42 @@ cd /home/ec2-user/website
 #    - Bot-blocked outlet the user vouches for -> append URL to "trusted"
 #      AND add a friendly title in "titles".
 
-# 2. Rebuild everything.
+# 2. Rebuild everything (mentions, patents, HTML, favicon/OG card, robots+sitemap).
 python3 tools/content_generation/run_pipeline.py
 
 # 3. Deploy to nginx.
 sudo rm -rf /usr/share/nginx/html/adam
 sudo cp -r adam /usr/share/nginx/html/adam
+sudo cp 404.html /usr/share/nginx/html/404.html
+sudo cp robots.txt /usr/share/nginx/html/robots.txt
+sudo cp sitemap.xml /usr/share/nginx/html/sitemap.xml
 sudo systemctl reload nginx
 
 # 4. Verify.
-curl -sI https://wosotowsky.org/adam/pr/ | head -1   # expect HTTP/2 200
+curl -sI https://wosotowsky.org/adam/pr/ | head -12   # expect HTTP/2 200 + security headers
+curl -s -o /dev/null -w "%{http_code}\n" https://wosotowsky.org/adam/resume.pdf   # 200
+curl -s -o /dev/null -w "%{http_code}\n" https://wosotowsky.org/nope              # 404
 ```
 
-Never skip step 2. Never hand-edit generated files under `adam/` — they
-are overwritten by `build_site.py`. If you need to change page copy,
-edit `tools/content_generation/build_site.py` and re-run the pipeline.
+Never skip step 2. Never hand-edit generated files under `adam/` &mdash;
+they are overwritten by `build_site.py`. If you need to change page
+copy, edit `tools/content_generation/build_site.py` and re-run the
+pipeline.
+
+## Nginx security headers
+
+Managed via `/etc/nginx/default.d/security-headers.conf`:
+
+- `X-Content-Type-Options: nosniff`
+- `X-Frame-Options: DENY`
+- `Referrer-Policy: no-referrer-when-downgrade`
+- `Content-Security-Policy` &mdash; self-only, no external scripts/styles/frames
+- `Strict-Transport-Security: max-age=31536000; includeSubDomains`
+- `Permissions-Policy` &mdash; geolocation/microphone/camera denied
+
+Do not relax the CSP to add a CDN or inline `<script>` without updating
+this file first. The chat widget (when it lands) will be same-origin
+only.
 
 ### Decision tree: "the user asked me to add a press mention"
 
