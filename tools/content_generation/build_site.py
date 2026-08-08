@@ -254,7 +254,41 @@ def build_about(bio: dict) -> str:
       <p>{roles}</p>
       <p><a class="more" href="/adam/work/">See what I work on &rarr;</a> &middot; <a class="more" href="/adam/resume.pdf">Download resume (PDF) &darr;</a></p>
     </section>
-{looking_html}""",
+{looking_html}    <section class="card see-also">
+      <h2>Related reading</h2>
+      <p><a href="/adam/philosophy/#agentic-ai">How I think about agentic AI in engineering &rarr;</a></p>
+      <p><a href="/adam/philosophy/#management">How I manage &rarr;</a></p>
+    </section>
+    <script type="application/ld+json">
+{{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Adam Wosotowsky",
+  "url": "https://wosotowsky.org/",
+  "jobTitle": "Cybersecurity research and engineering leader",
+  "description": "Threat researcher, engineering leader, and inventor with two decades of work in malware, botnets, and threat intelligence.",
+  "sameAs": [
+    "https://www.linkedin.com/in/adamwosotowsky",
+    "https://github.com/adamwoz-personal"
+  ],
+  "address": {{
+    "@type": "PostalAddress",
+    "addressLocality": "Lilburn",
+    "addressRegion": "GA",
+    "addressCountry": "US"
+  }},
+  "knowsAbout": [
+    "Threat intelligence",
+    "Malware analysis",
+    "Botnet takedowns",
+    "IP and domain reputation",
+    "Machine learning for security",
+    "Mobile threat intelligence",
+    "Messaging abuse and email fraud"
+  ]
+}}
+    </script>
+""",
         description=tagline,
         path="/adam/about/",
     )
@@ -294,6 +328,7 @@ def build_philosophy(bio: dict) -> str:
     <section class="page-head">
       <h1>Philosophy</h1>
       <p class="lead">{lead}</p>
+      <p class="see-also-inline"><a href="/adam/about/">About Adam</a> &middot; <a href="/adam/work/">What I work on</a></p>
     </section>
 {essays_html}""",
         description=ph.get("lead", ""),
@@ -395,7 +430,15 @@ def build_work(bio: dict) -> str:
       <p class="lead">{lead}</p>
     </section>
 {sections_html}
+    <section class="card see-also">
+      <h2>Related reading</h2>
+      <p><a href="/adam/philosophy/#agentic-ai">How I think about agentic AI in engineering &rarr;</a></p>
+      <p><a href="/adam/philosophy/#management">How I manage &rarr;</a></p>
+      <p><a href="/adam/patents/">Patents that came out of this work &rarr;</a></p>
+    </section>
 """,
+        description=work.get("lead", ""),
+        path="/adam/work/",
     )
 
 

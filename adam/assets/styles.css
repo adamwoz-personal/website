@@ -342,3 +342,10 @@ code {
 @media (max-width: 520px) {
   .contact-list li { grid-template-columns: 1fr; gap: 0.15rem; }
 }
+
+.see-also { border-top-color: var(--gt-gold-bright); background: linear-gradient(180deg, rgba(234,170,0,0.06), transparent); }
+.see-also h2 { color: var(--gt-navy); margin-top: 0; font-size: 1.1rem; }
+.see-also p { margin: 0.35rem 0; }
+.see-also a { color: var(--gt-red); font-weight: 600; }
+.see-also-inline { color: var(--muted); font-size: 0.95rem; margin-top: 0.6rem; }
+.see-also-inline a { color: var(--gt-navy); font-weight: 600; }
