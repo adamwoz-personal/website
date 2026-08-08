@@ -5,8 +5,8 @@
   "patents": [
     {
       "publication_number": "US11743276B2",
-      "title": "Methods, systems, articles of manufacture and apparatus for producing generic &hellip;",
-      "snippet": "Methods, apparatus, systems and articles of manufacture for producing generic Internet Protocol (IP) reputation through cross-protocol analysis are disclosed. An example apparatus includes a data collector to gather a first data set representing IP telemetry data for a first protocol, the data &hellip;",
+      "title": "Methods, systems, articles of manufacture and apparatus for producing generic IP reputation through cross-protocol analysis",
+      "snippet": "Methods, apparatus, systems, and articles of manufacture for producing generic Internet Protocol (IP) reputation through cross-protocol analysis. An example apparatus includes a data collector to gather a first data set representing IP telemetry data for a first protocol and a second data set for a second protocol, and a scoring engine that combines the signals into a single, protocol-agnostic reputation score more robust to any one channel being poisoned.",
       "assignee": "Mcafee, Llc",
       "filing_date": "2021-06-23",
       "grant_date": "2023-08-29",
@@ -17,7 +17,7 @@
     {
       "publication_number": "US11689550B2",
       "title": "Methods and apparatus to analyze network traffic for malicious activity",
-      "snippet": "Methods, apparatus, systems and articles of manufacture are disclosed to analyze network traffic for malicious activity. An example apparatus includes a graph generator to, in response to obtaining one or more internet protocol addresses included within input data, generate a graph data structure &hellip;",
+      "snippet": "Methods, apparatus, systems, and articles of manufacture to analyze network traffic for malicious activity. An example apparatus includes a graph generator that, given one or more input IP addresses, builds a graph data structure of related network entities, then uses graph-based features to classify traffic as malicious or benign across protocol families rather than overfitting to any single campaign.",
       "assignee": "Mcafee, Llc",
       "filing_date": "2020-03-13",
       "grant_date": "2023-06-27",

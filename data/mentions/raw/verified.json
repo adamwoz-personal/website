@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-08T15:27:05.087231+00:00",
+  "generated_at": "2026-08-08T15:31:19.380840+00:00",
   "seed_source": "data/mentions/seeds.json",
   "match_terms": [
     "wosotowsky"
@@ -473,33 +473,9 @@
       "content_type": "text/html"
     },
     {
-      "url": "https://patents.justia.com/inventor/adam-wosotowsky",
-      "domain": "patents.justia.com",
-      "status": 403,
-      "verified": true,
-      "trusted": true,
-      "title": "",
-      "description": "",
-      "match_terms_hit": [
-        "wosotowsky"
-      ],
-      "content_type": "text/html"
-    },
-    {
-      "url": "https://ieeexplore.ieee.org/document/9003003/",
-      "domain": "ieeexplore.ieee.org",
+      "url": "https://www.semanticscholar.org/paper/The-Current-State-of-Research-on-Reputation-of-Xu-Huang/1190994cfa13dc91058c78ff48da252f9af5e28d",
+      "domain": "www.semanticscholar.org",
       "status": 202,
-      "verified": true,
-      "trusted": true,
-      "title": "",
-      "description": "",
-      "match_terms_hit": [],
-      "content_type": "text/html"
-    },
-    {
-      "url": "https://www.chabad.org/news/article_cdo/aid/1008771/jewish/Security-Report-Details-Brand-Theft.htm",
-      "domain": "www.chabad.org",
-      "status": 403,
       "verified": true,
       "trusted": true,
       "title": "",
@@ -519,8 +495,32 @@
       "content_type": "text/html"
     },
     {
-      "url": "https://www.semanticscholar.org/paper/The-Current-State-of-Research-on-Reputation-of-Xu-Huang/1190994cfa13dc91058c78ff48da252f9af5e28d",
-      "domain": "www.semanticscholar.org",
+      "url": "https://patents.justia.com/inventor/adam-wosotowsky",
+      "domain": "patents.justia.com",
+      "status": 403,
+      "verified": true,
+      "trusted": true,
+      "title": "",
+      "description": "",
+      "match_terms_hit": [
+        "wosotowsky"
+      ],
+      "content_type": "text/html"
+    },
+    {
+      "url": "https://www.chabad.org/news/article_cdo/aid/1008771/jewish/Security-Report-Details-Brand-Theft.htm",
+      "domain": "www.chabad.org",
+      "status": 403,
+      "verified": true,
+      "trusted": true,
+      "title": "",
+      "description": "",
+      "match_terms_hit": [],
+      "content_type": "text/html"
+    },
+    {
+      "url": "https://ieeexplore.ieee.org/document/9003003/",
+      "domain": "ieeexplore.ieee.org",
       "status": 202,
       "verified": true,
       "trusted": true,

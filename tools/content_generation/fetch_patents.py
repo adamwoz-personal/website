@@ -35,8 +35,12 @@ class Patent:
     url: str
 
 
+import html as html_lib
+
+
 def clean(text: str) -> str:
     text = TAG_RE.sub("", text)
+    text = html_lib.unescape(text)
     return WS_RE.sub(" ", text).strip()
 
 
@@ -88,6 +92,20 @@ def main() -> int:
         if output_path.exists():
             return 0
         raise
+    # Google Patents truncates titles/snippets with an ellipsis. If any
+    # incoming record is truncated, prefer the hand-curated file on disk
+    # so we don't overwrite good copy with truncated search-result text.
+    def is_truncated(p) -> bool:
+        joined = f"{p.title}\n{p.snippet}"
+        return "\u2026" in joined or "..." in joined.rstrip(".")
+
+    if output_path.exists() and any(is_truncated(p) for p in patents):
+        print(
+            f"Live patent fetch returned truncated fields; keeping existing "
+            f"{output_path} to preserve curated titles.",
+            flush=True,
+        )
+        return 0
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(
         json.dumps(
