@@ -1,0 +1,211 @@
+{
+  "about": {
+    "title": "About Adam",
+    "tagline": "Twenty-five years turning noisy security telemetry into clean, actionable protection.",
+    "intro": [
+      "I led the data, edge, and application-analysis engineering organizations at Zimperium, where I was responsible for how threat telemetry flowed through the company and how it became protection our customers could act on. Before Zimperium I spent a decade at McAfee and Intel as a Research Architect and Data Architect focused on messaging, connection reputation, and malware research.",
+      "The work has always sat at the intersection of three things: large-scale data pipelines, machine-learning classifiers that have to hold up in production, and communicating what threat actors are actually doing to customers, executives, government agencies, and the press. I've been quoted in hundreds of interviews and features, keynoted anti-abuse conferences, taught training courses, chaired principal-engineering committees, and served as an FBI escalation contact.",
+      "I hold two U.S. patents on machine-learning techniques for network-security telemetry and I'm a Georgia Tech CS graduate. I currently live in Lilburn, GA."
+    ],
+    "highlights": [
+      "Steady climb over 25+ years in the security ecosystem: from L3 Support through Principal Engineer, Data Architect, and Research Architect, to Principal Data Architect.",
+      "Two granted U.S. patents on network-security machine learning (see /adam/patents/).",
+      "Leadership and management have been a constant — from organizing cross-team working groups as an L3 support engineer, through Principal Engineer at McAfee, to running the Data, Edge, and Application Analysis engineering organizations at Zimperium and chairing the Principal Engineering Committee.",
+      "Personally responsible for ~30M IP and ~200K domain reputation blocks per year at Intel/McAfee, driven by dedicated threat-hunting rather than passive feeds.",
+      "7 years on the McAfee Public Relations steering team; hundreds of press placements across blogs, threat reports, magazine interviews, podcasts, and TV.",
+      "11+ conference presentations and 2 keynote talks on future-threat prediction; 4 conference training courses delivered.",
+      "FBI escalation contact; M3AAWG GDPR working-group contributor.",
+      "Led full messaging datacenter uplift from physical Rackspace to virtualized Oracle."
+    ],
+    "roles_summary": "Principal Data Architect (Zimperium) · Research Architect (McAfee) · Data Architect (Intel) · Principal Engineer (McAfee) · Special Agent (Secure Computing) · L3 Support (CipherTrust) · Developer/QA (Reflex Security) · Web Developer (CNN)."
+  },
+  "work": {
+    "title": "What I work on",
+    "lead": "A tour of the technical areas I've spent the most time on. Each section is grounded in shipping systems, patents, and press coverage where available.",
+    "sections": [
+      {
+        "id": "reputation",
+        "heading": "IP and domain reputation at internet scale",
+        "body": [
+          "At Intel and McAfee I owned the data pipelines, classifiers, and threat-hunting practice behind global IP and domain reputation feeds. In steady state that meant ~30 million IP blocks and ~200,000 domain blocks published every year, feeding firewalls, email gateways, and endpoint products worldwide. Those numbers didn't come from passively ingesting third-party lists — they came from active threat hunting: pivoting on telemetry signals, chasing infrastructure across protocols, and building the classifiers that turned each hunt into durable, published protection. The engineering challenge was less about volume and more about signal quality: making sure the blocks we published were correct enough that customer help desks did not drown in false-positive tickets.",
+          "A big part of the work was replacing external reputation feeds with internally generated intelligence, which cut third-party data costs while giving us more control over precision and coverage. Patent US 11,743,276 grew out of this line of work: combining cross-protocol signals into a single reputation score that is more robust to any one channel being poisoned."
+        ],
+        "patent_refs": [
+          "US11743276B2"
+        ],
+        "press_terms": [
+          "reputation",
+          "spam",
+          "phishing",
+          "spamhaus",
+          "botnet"
+        ]
+      },
+      {
+        "id": "botnets",
+        "heading": "Botnet analysis and takedowns",
+        "body": [
+          "Much of my early classifier work targeted the largest email-sending botnets of the era — Rustock, Grum, Cutwail, Kelihos, and their descendants. I contributed to takedown-adjacent analysis, wrote the classifiers that recognized their traffic in the wild, and spoke to the press regularly as those campaigns collapsed and reorganized.",
+          "The lesson that has stuck with me: takedowns are a punctuation mark in a much longer story. Real, durable protection comes from telemetry pipelines that keep pace with attackers as they migrate infrastructure, not from any single legal or technical action."
+        ],
+        "press_terms": [
+          "botnet",
+          "rustock",
+          "grum",
+          "kelihos",
+          "spam"
+        ]
+      },
+      {
+        "id": "malicious-ip-ml",
+        "heading": "Machine-learning classifiers for malicious traffic",
+        "body": [
+          "Building ML classifiers that hold up in production security is a different discipline from building them in a notebook. Attackers actively adapt to your model; feature drift is adversarial, not just statistical. I spent years doing feature engineering for messaging, connection, and domain classifiers — and, importantly, building the internal tooling that let researchers iterate on those features quickly against fresh telemetry.",
+          "Patent US 11,689,550 covers one line of that work: analyzing malicious network traffic in a way that generalizes across attack families rather than overfitting to any single campaign. The internal research portal I built at McAfee — unifying disparate data sources behind one query interface — is what made that kind of iteration practical for the team."
+        ],
+        "patent_refs": [
+          "US11689550B2"
+        ],
+        "press_terms": [
+          "machine learning",
+          "classifier",
+          "ip",
+          "reputation"
+        ]
+      },
+      {
+        "id": "mobile",
+        "heading": "Mobile threat intelligence",
+        "body": [
+          "At Zimperium the work shifts to mobile: on-device detection and cloud-side analytics for iOS and Android threats, from malicious apps and phishing to network-layer attacks. I led the data, edge, and application-analysis engineering teams that turn on-device telemetry into intelligence customers can actually operationalize — including a full uplift of the datacenter footprint from physical Rackspace infrastructure to virtualized Oracle, and a new generation of edge delivery systems that get threat intelligence out to customer consoles in near real time.",
+          "I chair the Principal Engineering Committee, which is where we align long-term technical priorities across the org, and I'm the executive-level escalation contact for threat analysis on strategic accounts."
+        ],
+        "press_terms": [
+          "mobile",
+          "android",
+          "ios",
+          "zimperium"
+        ]
+      },
+      {
+        "id": "messaging-abuse",
+        "heading": "Messaging abuse: spam, phishing, and email fraud",
+        "body": [
+          "Spam and phishing are where I cut my teeth. From CipherTrust and Secure Computing through McAfee, I've written and maintained anti-spam classifiers, spearphishing detection heuristics, and connection-reputation systems that fed the email-security products of that era. I designed and produced the complete anti-spam configuration for the IronMail appliance, ran zero-day fixes, and trained engineers on the backend systems and UNIX internals that kept it running.",
+          "This is also where the public-relations side of my career started. Editors and reporters need someone who can explain a new phishing wave, a spoofed-brand campaign, or a botnet flare-up in plain language on deadline. I've done that a lot."
+        ],
+        "press_terms": [
+          "spam",
+          "phishing",
+          "email",
+          "spearphishing",
+          "malware"
+        ]
+      },
+      {
+        "id": "public-relations",
+        "heading": "Talking to the press, customers, and government",
+        "body": [
+          "For seven of my nine years on the McAfee PR team I sat on the steering committee. I've delivered keynote talks on future threat trends, taught training courses at conferences, presented on eleven-plus panels, and been quoted in hundreds of press interviews from CNN, ABC News, and the LA Times through IEEE, security-industry trades, and international outlets.",
+          "The through-line: security only becomes protective when it's communicated well. A great classifier that no one understands is a lawsuit waiting to happen; a well-explained one earns the trust that keeps customers deploying it. See the <a href=\"/adam/pr/\">public relations page</a> for a curated selection."
+        ],
+        "press_terms": []
+      }
+    ]
+  },
+  "looking_for": {
+    "title": "What I'm looking for",
+    "body": [
+      "A leadership role that revolves around sifting data for threats, building pipelines for the data those investigations run on, and working with highly motivated individual team members. I care about the whole loop &mdash; from raw telemetry, through the classifiers and reputation systems that turn it into protection, to the customer-facing story that explains why it matters."
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "lead": "The best way to reach me is email. I read it daily.",
+    "channels": [
+      {
+        "label": "Email",
+        "value": "adam.wosotowsky@gmail.com",
+        "href": "mailto:adam.wosotowsky@gmail.com"
+      },
+      {
+        "label": "LinkedIn",
+        "value": "linkedin.com/in/adamwosotowsky",
+        "href": "https://www.linkedin.com/in/adamwosotowsky"
+      },
+      {
+        "label": "Location",
+        "value": "Lilburn, GA — just outside the perimeter, northeast of Atlanta",
+        "href": null
+      },
+      {
+        "label": "Resume",
+        "value": "Download PDF",
+        "href": "/adam/resume.pdf"
+      }
+    ],
+    "notes": [
+      "Email is the fastest path. For anything time-sensitive, LinkedIn works too."
+    ]
+  },
+  "speaking": {
+    "title": "Speaking, teaching, and community",
+    "lead": "A partial record of the conferences, courses, and communities I've contributed to over the years.",
+    "sections": [
+      {
+        "heading": "M3AAWG — Messaging, Mobile, Malware Anti-Abuse Working Group",
+        "body": [
+          "M3AAWG is the venue I've contributed to most consistently. Over multiple sessions I've presented on email-related threat intelligence, telemetry design, and how to combine third-party data with in-house feeds so that machine-learning classifiers and reputation systems make the most of every signal. I've also served on the M3AAWG GDPR working group.",
+          "The M3AAWG audience is other practitioners &mdash; ISPs, mailbox providers, security vendors, and law enforcement liaisons &mdash; which makes it a good forum for technical detail rather than product talks."
+        ]
+      },
+      {
+        "heading": "NCFTA — National Cyber-Forensics and Training Alliance",
+        "body": [
+          "The NCFTA is the teaching and industry-outreach arm affiliated with the FBI's cyber research work. I've given multiple presentations at NCFTA-adjacent security conferences on threat-intelligence topics."
+        ]
+      },
+      {
+        "heading": "Texas ISF — Information Security Forum",
+        "body": [
+          "Most recently I presented on mobile threat intelligence at the Texas ISF, covering how on-device telemetry can be turned into actionable protection for enterprise mobility programs."
+        ]
+      },
+      {
+        "heading": "Training courses I've taught",
+        "body": [
+          "I've taught multi-session courses on using Linux and the UNIX shell to surface anomalies in logs and raw data &mdash; practical, hands-on material for analysts who want to reach for grep, awk, jq, and a well-placed sort before they reach for a dashboard.",
+          "I've also taken (and put to work) multiple courses on running meetings and facilitating groups through brainstorming into actionable outcomes. That skill compounds; it is genuinely why the technical work ships."
+        ]
+      }
+    ],
+    "closing": "I have almost certainly forgotten to list a conference or two here. If we've shared a stage or a hallway conversation, feel free to remind me."
+  },
+  "philosophy": {
+    "title": "Philosophy",
+    "lead": "Two short essays on how I think about the field: agentic AI in engineering organizations, and how I try to manage the humans doing the work.",
+    "essays": [
+      {
+        "id": "agentic-ai",
+        "heading": "Agentic AI in engineering",
+        "body": [
+          "In the early days of the “AI Revolution” the common theme seemed to be executives pushing engineers to “integrate AI into their workflows.” The problem with that framing was that the AI at the time was little better than a Google search. It could reasonably put you in the ballpark of an answer, but it was nowhere near consistent or accurate enough to be a real solution.",
+          "As the tooling progressed, many organizations saw agentic AI as a way to save money through low-cost, entry-level developers leveraging AI to increase their productivity. The problem with that line of thinking is that when you already have a magic wand equivalent to a thousand entry-level developers, turning it into a thousand-and-one entry-level developers by hiring a low-cost lead does not actually produce anything more than thousands and thousands of lines of what has been termed “AI workslop.”",
+          "The reality is that as agentic AI continues to develop, it increases the value of institutional knowledge, an understanding of modular and incremental best practices, and patient managers familiar with overall engineering structure. The goal of leadership in an AI-centered engineering environment is to cultivate that long-term institutional knowledge, protect the best practices that run from design to delivery, and create an employee culture of cooperation and the free flow of ideas.",
+          "The wild pendulum of decisions driven by headline hype and a lack of hands-on experience does not reflect the real power of an AI-centered production organization. Real leverage shows up when you pair experienced engineers with capable tools and give them room to think."
+        ]
+      },
+      {
+        "id": "management",
+        "heading": "How I manage",
+        "body": [
+          "Employees should feel a deep sense of belonging and respect in the jobs they work in. Friendships should be encouraged, teamwork expected. As a manager I'm not only concerned with the production of my employees and clearing the path to their business goals; I'm concerned about their lives outside of work, and I'll often provide guidance ranging from financial questions, to relationships, to philosophizing about how to live a better life.",
+          "When leading teams I want developers to see me as someone who helps them do their job, not someone who interrogates or micromanages their tasks. I want to hear their complaints on all things, and once digested I will make the changes I can or voice solutions up my chain of command.",
+          "At every step of developing an engineering artifact there is room for creativity and effort. Employees are not cogs in a machine that can be arbitrarily moved around to support different efforts at the same weight. That was true before agentic AI came into the picture, and with the growing importance of experience and institutional knowledge it is even more true today.",
+          "A careful balance has to be struck between telling people what to do and working with people to develop a plan of what to do. A development plan built without the consultation of senior engineers is not a good plan. We are all creative artists in our area of expertise, and no single human being should expect they can replicate that expertise so well as to be able to micromanage every aspect of a plan or its implementation.",
+          "Some days things just aren't working out at all, and you know your self-production is in a ditch. Some other days you're hitting on all cylinders like a computer deity. When your mind is in its highest state of productivity, I want that mania of results to benefit the organization. This may mean that some days you work more than your scheduled time, because you know you can work less when you need to get your focus back. As professional computer nerds, I expect employees to work with me to find the most productive balance of life and work. It is my job to protect that balance across their life and career."
+        ]
+      }
+    ]
+  }
+}

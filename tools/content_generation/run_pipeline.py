@@ -40,6 +40,8 @@ def main() -> int:
         run([py, f"{tool}/fetch_patents.py", "--inventor", args.inventor])
 
     run([py, f"{tool}/build_site.py"])
+    run([py, f"{tool}/build_assets.py"])
+    run([py, f"{tool}/build_seo.py"])
     print("Pipeline completed.")
     return 0
 

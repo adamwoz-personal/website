@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-07T18:50:29.669791+00:00",
+  "generated_at": "2026-08-08T15:44:50.226201+00:00",
   "seed_source": "data/mentions/seeds.json",
   "match_terms": [
     "wosotowsky"
@@ -66,7 +66,7 @@
       "status": 200,
       "verified": true,
       "trusted": false,
-      "title": "&#x27;Spearphishing&#x27; a tightly focused scheme to steal corporate secrets - Los Angeles Times",
+      "title": "'Spearphishing' a tightly focused scheme to steal corporate secrets - Los Angeles Times",
       "description": "Much of the damage allegedly inflicted by the Chinese military officers charged with economic espionage this week came via email scams.",
       "match_terms_hit": [
         "wosotowsky"
@@ -92,7 +92,7 @@
       "status": 200,
       "verified": true,
       "trusted": false,
-      "title": "Virtual currency comes with real threats &#8211; East Bay Times",
+      "title": "Virtual currency comes with real threats \u2013 East Bay Times",
       "description": "Virtual currency comes with real threats",
       "match_terms_hit": [
         "wosotowsky"
@@ -106,7 +106,7 @@
       "verified": true,
       "trusted": false,
       "title": "Is the Internet O.K.? An Attack on a Spam Tracking Company and Cut Internet Cord Slows Down Speeds - ABC News",
-      "description": "It&#x27;s been a tough week for the Internet. A cut cable and massive cyber attack have impacted web speeds this week.",
+      "description": "It's been a tough week for the Internet. A cut cable and massive cyber attack have impacted web speeds this week.",
       "match_terms_hit": [
         "wosotowsky"
       ],
@@ -118,8 +118,8 @@
       "status": 200,
       "verified": true,
       "trusted": false,
-      "title": "Dept. of Homeland Security Suggests Users Disable Oracle&#x27;s Widely Used Java Software; Instructions For Disabling",
-      "description": "Computer experts are warning personal computer users to disable Oracle&#x27;s Java program, which is run by 1.1 billion desktops, according to the company.",
+      "title": "Dept. of Homeland Security Suggests Users Disable Oracle's Widely Used Java Software; Instructions For Disabling",
+      "description": "Computer experts are warning personal computer users to disable Oracle's Java program, which is run by 1.1 billion desktops, according to the company.",
       "match_terms_hit": [
         "wosotowsky"
       ],
@@ -157,7 +157,7 @@
       "status": 200,
       "verified": true,
       "trusted": false,
-      "title": "Intel Security&#8217;s &#8220;McAfee Labs 2017 Threats Predictions Report&#8221;: Predictions Include Ransomware, \u201cDronejackings,\u201d Sophisticated Hardware &#038; Firmware Attacks, Attacks on \u201cSmart Home\u201d IoT Devices &#8211; Photoxels",
+      "title": "Intel Security\u2019s \u201cMcAfee Labs 2017 Threats Predictions Report\u201d: Predictions Include Ransomware, \u201cDronejackings,\u201d Sophisticated Hardware & Firmware Attacks, Attacks on \u201cSmart Home\u201d IoT Devices \u2013 Photoxels",
       "description": "The following video presents Securing Tomorrow. Today: Security Pro, Did You Know? (Episode 10): Brandie Claborn interviews Candace Worley The 2017 threats predictions include the following: Ransom\u2026",
       "match_terms_hit": [
         "wosotowsky"
@@ -183,8 +183,8 @@
       "status": 200,
       "verified": true,
       "trusted": false,
-      "title": "Valentine&#x27;s Day scams and schemes -- sometimes love stinks: Plain Dealing - cleveland.com",
-      "description": "It&#x27;s not all roses. Valentine&#x27;s Day and dating schemes to avoid.",
+      "title": "Valentine's Day scams and schemes -- sometimes love stinks: Plain Dealing - cleveland.com",
+      "description": "It's not all roses. Valentine's Day and dating schemes to avoid.",
       "match_terms_hit": [
         "wosotowsky"
       ],
@@ -197,7 +197,7 @@
       "verified": true,
       "trusted": false,
       "title": "What You Should Know About Grum and the Botnet Takedown | PCWorld",
-      "description": "Grum--the third largest botnet--has been shut down by authorities, but that doesn&#039;t mean the threat isn&#039;t still out there.",
+      "description": "Grum--the third largest botnet--has been shut down by authorities, but that doesn't mean the threat isn't still out there.",
       "match_terms_hit": [
         "wosotowsky"
       ],
@@ -249,7 +249,7 @@
       "verified": true,
       "trusted": false,
       "title": "Huge DDoS Attack a New Approach - ISSSource",
-      "description": "A distributed denial-of-service (DDoS) attack using a technique known as DNS reflection has resulted in what security experts are calling the largest DDoS attack to date, which generated traffic volumes of 300G bps, or about three times larger than any known previous attacks. The DDoS attack on Internet blacklist maintainer Spamhaus topped 300G bps, powered [&hellip;]",
+      "description": "A distributed denial-of-service (DDoS) attack using a technique known as DNS reflection has resulted in what security experts are calling the largest DDoS attack to date, which generated traffic volumes of 300G bps, or about three times larger than any known previous attacks. The DDoS attack on Internet blacklist maintainer Spamhaus topped 300G bps, powered [\u2026]",
       "match_terms_hit": [
         "wosotowsky"
       ],
@@ -261,8 +261,8 @@
       "status": 200,
       "verified": true,
       "trusted": false,
-      "title": "Unprecedented cyber attack won&#x27;t slow down the Internet - Los Angeles Times",
-      "description": "Unprecedented cyber attack won&#x27;t slow down the Internet",
+      "title": "Unprecedented cyber attack won't slow down the Internet - Los Angeles Times",
+      "description": "Unprecedented cyber attack won't slow down the Internet",
       "match_terms_hit": [
         "wosotowsky"
       ],
@@ -314,7 +314,7 @@
       "verified": true,
       "trusted": false,
       "title": "Encryption Merits Can Be Exaggerated",
-      "description": "Encryption combined with cloud storage has been hailed as a highly secure way for organizations to protect their data from Net marauders, but their value may be overstated, contend two security pros. While encrypting data is better than not encrypting it, where it&#039;s decrypted can be an important security consideration, said Steve Weis, CTO and cofounder of PrivateCore. Data at rest that&#039;s been encrypted has strong protection. It&#039;s when the data has to be decrypted for use with applications that it can become vulnerable.",
+      "description": "Encryption combined with cloud storage has been hailed as a highly secure way for organizations to protect their data from Net marauders, but their value may be overstated, contend two security pros. While encrypting data is better than not encrypting it, where it's decrypted can be an important security consideration, said Steve Weis, CTO and cofounder of PrivateCore. Data at rest that's been encrypted has strong protection. It's when the data has to be decrypted for use with applications that it can become vulnerable.",
       "match_terms_hit": [
         "wosotowsky"
       ],
@@ -326,7 +326,7 @@
       "status": 200,
       "verified": true,
       "trusted": false,
-      "title": "From social media to &#x27;veritable cesspool of spam:&#x27; Free Press columnist analyzes Facebook security - mlive.com",
+      "title": "From social media to 'veritable cesspool of spam:' Free Press columnist analyzes Facebook security - mlive.com",
       "description": "How safe do you feel your accounts, such as Facebook, are? Are you worried? Have you ever been a victim to digital identity theft? If so, how?",
       "match_terms_hit": [
         "wosotowsky"
@@ -339,8 +339,8 @@
       "status": 200,
       "verified": true,
       "trusted": false,
-      "title": "Sen. Whitehouse says criminals can hack into home computers and spy on victims through video cameras &#8211; PolitiFact",
-      "description": "&quot;Some criminals have learned how to spy on Americans, hacking into our home computers and looking out through the video camera attached to the screen.&quot;",
+      "title": "Sen. Whitehouse says criminals can hack into home computers and spy on victims through video cameras \u2013 PolitiFact",
+      "description": "\"Some criminals have learned how to spy on Americans, hacking into our home computers and looking out through the video camera attached to the screen.\"",
       "match_terms_hit": [
         "wosotowsky"
       ],
@@ -352,7 +352,7 @@
       "status": 200,
       "verified": true,
       "trusted": false,
-      "title": "TechCentral.ie | Ireland&#039;s technology news resource",
+      "title": "TechCentral.ie | Ireland's technology news resource",
       "description": "Mobile threat growing but still small",
       "match_terms_hit": [
         "wosotowsky"
@@ -403,7 +403,7 @@
       "verified": true,
       "trusted": false,
       "title": "Now on Pinterest: Scams - The New York Times",
-      "description": "It wasn&#x2019;t long before scammers and phishers found their way onto Pinterest, the growing social-network site.",
+      "description": "It wasn\u2019t long before scammers and phishers found their way onto Pinterest, the growing social-network site.",
       "match_terms_hit": [
         "wosotowsky"
       ],
@@ -462,8 +462,8 @@
       "content_type": "text/html"
     },
     {
-      "url": "https://www.semanticscholar.org/paper/The-Current-State-of-Research-on-Reputation-of-Xu-Huang/1190994cfa13dc91058c78ff48da252f9af5e28d",
-      "domain": "www.semanticscholar.org",
+      "url": "https://ieeexplore.ieee.org/document/9003003/",
+      "domain": "ieeexplore.ieee.org",
       "status": 202,
       "verified": true,
       "trusted": true,
@@ -497,8 +497,19 @@
       "content_type": "text/html"
     },
     {
-      "url": "https://ieeexplore.ieee.org/document/9003003/",
-      "domain": "ieeexplore.ieee.org",
+      "url": "https://timesofmalta.com/article/Stuxnet-like-virus-points-to-new-round-of-cyber-war.391046",
+      "domain": "timesofmalta.com",
+      "status": 403,
+      "verified": true,
+      "trusted": true,
+      "title": "",
+      "description": "",
+      "match_terms_hit": [],
+      "content_type": "text/html"
+    },
+    {
+      "url": "https://www.semanticscholar.org/paper/The-Current-State-of-Research-on-Reputation-of-Xu-Huang/1190994cfa13dc91058c78ff48da252f9af5e28d",
+      "domain": "www.semanticscholar.org",
       "status": 202,
       "verified": true,
       "trusted": true,
@@ -510,17 +521,6 @@
     {
       "url": "https://www.chabad.org/news/article_cdo/aid/1008771/jewish/Security-Report-Details-Brand-Theft.htm",
       "domain": "www.chabad.org",
-      "status": 403,
-      "verified": true,
-      "trusted": true,
-      "title": "",
-      "description": "",
-      "match_terms_hit": [],
-      "content_type": "text/html"
-    },
-    {
-      "url": "https://timesofmalta.com/article/Stuxnet-like-virus-points-to-new-round-of-cyber-war.391046",
-      "domain": "timesofmalta.com",
       "status": 403,
       "verified": true,
       "trusted": true,

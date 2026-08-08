@@ -23,8 +23,13 @@ literally. When in doubt, do the smaller, safer thing and ask the user.
    Copy must use words like "curated selection", "a broader sample",
    "highlighted from hundreds of..." Numeric counts on tiles must include
    a trailing `+` (e.g. `31+`).
-4. **Static HTML only.** No client-side JavaScript in anything under
-   `adam/`. No inline `<script>`. No third-party widgets. No trackers.
+4. **Static HTML preferred, light JS allowed.** Static HTML is still the
+   default for anything under `adam/`. Small, purposeful JavaScript is OK
+   (e.g. a chat widget, a lightweight dropdown, a copy-to-clipboard
+   button) as long as: no frameworks, no external CDN dependencies, no
+   trackers, and the JS is well under a few KB per page. When in doubt,
+   don't add JS — but a single small script per page is not a policy
+   violation.
 5. **All outbound links** must include `rel="noopener noreferrer"`.
 6. **Never publish `unverified` entries** from `classified.json`. If the
    user wants a bot-blocked page published, they will add it to the
@@ -49,21 +54,42 @@ cd /home/ec2-user/website
 #    - Bot-blocked outlet the user vouches for -> append URL to "trusted"
 #      AND add a friendly title in "titles".
 
-# 2. Rebuild everything.
+# 2. Rebuild everything (mentions, patents, HTML, favicon/OG card, robots+sitemap).
 python3 tools/content_generation/run_pipeline.py
 
 # 3. Deploy to nginx.
 sudo rm -rf /usr/share/nginx/html/adam
 sudo cp -r adam /usr/share/nginx/html/adam
+sudo cp 404.html /usr/share/nginx/html/404.html
+sudo cp robots.txt /usr/share/nginx/html/robots.txt
+sudo cp sitemap.xml /usr/share/nginx/html/sitemap.xml
 sudo systemctl reload nginx
 
 # 4. Verify.
-curl -sI https://wosotowsky.org/adam/pr/ | head -1   # expect HTTP/2 200
+curl -sI https://wosotowsky.org/adam/pr/ | head -12   # expect HTTP/2 200 + security headers
+curl -s -o /dev/null -w "%{http_code}\n" https://wosotowsky.org/adam/resume.pdf   # 200
+curl -s -o /dev/null -w "%{http_code}\n" https://wosotowsky.org/nope              # 404
 ```
 
-Never skip step 2. Never hand-edit generated files under `adam/` — they
-are overwritten by `build_site.py`. If you need to change page copy,
-edit `tools/content_generation/build_site.py` and re-run the pipeline.
+Never skip step 2. Never hand-edit generated files under `adam/` &mdash;
+they are overwritten by `build_site.py`. If you need to change page
+copy, edit `tools/content_generation/build_site.py` and re-run the
+pipeline.
+
+## Nginx security headers
+
+Managed via `/etc/nginx/default.d/security-headers.conf`:
+
+- `X-Content-Type-Options: nosniff`
+- `X-Frame-Options: DENY`
+- `Referrer-Policy: no-referrer-when-downgrade`
+- `Content-Security-Policy` &mdash; self-only, no external scripts/styles/frames
+- `Strict-Transport-Security: max-age=31536000; includeSubDomains`
+- `Permissions-Policy` &mdash; geolocation/microphone/camera denied
+
+Do not relax the CSP to add a CDN or inline `<script>` without updating
+this file first. The chat widget (when it lands) will be same-origin
+only.
 
 ### Decision tree: "the user asked me to add a press mention"
 
