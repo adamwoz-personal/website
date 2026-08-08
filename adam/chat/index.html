@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer-when-downgrade">
+  <title>Ask about Adam — wosotowsky.org</title>
+  <meta name="description" content="A small RAG assistant grounded in Adam Wosotowsky&#x27;s site content.">
+  <link rel="stylesheet" href="/adam/assets/styles.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="/adam/assets/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/adam/assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ask about Adam — wosotowsky.org">
+  <meta property="og:description" content="A small RAG assistant grounded in Adam Wosotowsky&#x27;s site content.">
+  <meta property="og:image" content="https://wosotowsky.org/adam/assets/og-card.png">
+  <meta property="og:url" content="https://wosotowsky.org/adam/chat/">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="/adam/">Adam&nbsp;Wosotowsky</a>
+      <nav class="nav">
+        <a href="/adam/about/">About</a>
+        <a href="/adam/work/">Work</a>
+        <a href="/adam/philosophy/">Philosophy</a>
+        <a href="/adam/speaking/">Speaking</a>
+        <a href="/adam/pr/">Public relations</a>
+        <a href="/adam/patents/">Patents</a>
+        <a href="/adam/chat/">Ask</a>
+        <a href="/adam/contact/">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+
+    <section class="page-head">
+      <h1>Ask about Adam</h1>
+      <p class="lead">A small assistant grounded in this site's own content. Try it on questions about work history, patents, or philosophy. Off-topic questions get redirected — for anything else you'd want a general chatbot.</p>
+    </section>
+    <section class="card chat-card">
+      <div id="chat-messages" class="chat-messages" aria-live="polite" aria-label="Conversation"></div>
+      <form id="chat-form" class="chat-form" autocomplete="off">
+        <label for="chat-input" class="visually-hidden">Your question</label>
+        <textarea id="chat-input" name="message" rows="2" maxlength="2000" placeholder="Ask about Adam's work, patents, philosophy..." required></textarea>
+        <div class="chat-controls">
+          <div id="chat-status" class="chat-status" aria-live="polite"></div>
+          <button id="chat-submit" type="submit" class="chat-submit">Ask</button>
+        </div>
+      </form>
+      <div class="chat-suggestions">
+        <span class="chip" data-suggest="What has Adam worked on in botnets?">botnets</span>
+        <span class="chip" data-suggest="What are Adam's patents actually about?">patents</span>
+        <span class="chip" data-suggest="How does Adam think about agentic AI in engineering?">agentic AI</span>
+        <span class="chip" data-suggest="What kind of role is Adam looking for?">what he's looking for</span>
+        <span class="chip" data-suggest="Where has Adam spoken publicly?">speaking</span>
+      </div>
+      <p class="chat-footnote">Runs on AWS Bedrock via a small self-hosted service. Rate limits and a daily token budget keep costs bounded. Nothing sensitive is stored; message bodies are truncated to 64 characters in an audit log for abuse triage. See <a href="/adam/philosophy/#agentic-ai">the philosophy essay</a> for the design thinking.</p>
+    </section>
+    <script src="/adam/chat/chat.js" defer></script>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Generated 2026-08-08 19:11 UTC &middot; Static HTML only.</p>
+    </div>
+  </footer>
+</body>
+</html>

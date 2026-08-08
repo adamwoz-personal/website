@@ -179,3 +179,21 @@ than guess site copy, curation criteria, or which URLs to add.
    selection; the "more mentions" page is a broader sample; the archive
    itself spans hundreds of items and is not fully represented here.
 
+
+## /adam/chat/ - public Q&A widget
+
+Static page + external JS (`/adam/chat/chat.js`, same-origin, CSP-safe).
+Widget POSTs to `/adam/chat/api/message`, which nginx proxies to a local
+FastAPI service (see `docs/runbook.md`).
+
+**AI-operator rules**:
+- Chat widget JS lives at `adam/chat/chat.js` and is regenerated on any repo
+  rebuild - do not edit the deployed copy on the box.
+- Do not add inline `<script>` blocks to `/adam/chat/index.html`. Site CSP
+  script-src is `'self'` with no unsafe-inline and no per-page hashes.
+- Add new suggestion chips by editing `build_chat()` in
+  `tools/content_generation/build_site.py`, NOT by editing the rendered HTML.
+- The chat's model IDs and grounding context are set from
+  `tools/inference/chat_service/config.py` and `context.py`, NOT from
+  anywhere in this static site. Do not attempt to "improve the assistant"
+  by editing the HTML.
