@@ -8,16 +8,16 @@
       "I hold two U.S. patents on machine-learning techniques for network-security telemetry and I'm a Georgia Tech CS graduate. I currently live in Lilburn, GA."
     ],
     "highlights": [
-      "Steady climb over 25+ years in the security ecosystem: L3 Support &rarr; Principal Engineer &rarr; Data Architect &rarr; Research Architect &rarr; Principal Data Architect.",
+      "Steady climb over 25+ years in the security ecosystem: from L3 Support through Principal Engineer, Data Architect, and Research Architect, to Principal Data Architect.",
       "Two granted U.S. patents on network-security machine learning (see /adam/patents/).",
-      "Leadership and management have been a constant &mdash; from organizing cross-team working groups as an L3 support engineer, through Principal Engineer at McAfee, to running the Data, Edge, and Application Analysis engineering organizations at Zimperium and chairing the Principal Engineering Committee.",
+      "Leadership and management have been a constant — from organizing cross-team working groups as an L3 support engineer, through Principal Engineer at McAfee, to running the Data, Edge, and Application Analysis engineering organizations at Zimperium and chairing the Principal Engineering Committee.",
       "Personally responsible for ~30M IP and ~200K domain reputation blocks per year at Intel/McAfee, driven by dedicated threat-hunting rather than passive feeds.",
       "7 years on the McAfee Public Relations steering team; hundreds of press placements across blogs, threat reports, magazine interviews, podcasts, and TV.",
       "11+ conference presentations and 2 keynote talks on future-threat prediction; 4 conference training courses delivered.",
       "FBI escalation contact; M3AAWG GDPR working-group contributor.",
       "Led full messaging datacenter uplift from physical Rackspace to virtualized Oracle."
     ],
-    "roles_summary": "Principal Data Architect (Zimperium) &middot; Research Architect (McAfee) &middot; Data Architect (Intel) &middot; Principal Engineer (McAfee) &middot; Special Agent (Secure Computing) &middot; L3 Support (CipherTrust) &middot; Developer/QA (Reflex Security) &middot; Web Developer (CNN)."
+    "roles_summary": "Principal Data Architect (Zimperium) · Research Architect (McAfee) · Data Architect (Intel) · Principal Engineer (McAfee) · Special Agent (Secure Computing) · L3 Support (CipherTrust) · Developer/QA (Reflex Security) · Web Developer (CNN)."
   },
   "work": {
     "title": "What I work on",
@@ -27,39 +27,65 @@
         "id": "reputation",
         "heading": "IP and domain reputation at internet scale",
         "body": [
-          "At Intel and McAfee I owned the data pipelines, classifiers, and threat-hunting practice behind global IP and domain reputation feeds. In steady state that meant ~30 million IP blocks and ~200,000 domain blocks published every year, feeding firewalls, email gateways, and endpoint products worldwide. Those numbers didn't come from passively ingesting third-party lists &mdash; they came from active threat hunting: pivoting on telemetry signals, chasing infrastructure across protocols, and building the classifiers that turned each hunt into durable, published protection. The engineering challenge was less about volume and more about signal quality: making sure the blocks we published were correct enough that customer help desks did not drown in false-positive tickets.",
+          "At Intel and McAfee I owned the data pipelines, classifiers, and threat-hunting practice behind global IP and domain reputation feeds. In steady state that meant ~30 million IP blocks and ~200,000 domain blocks published every year, feeding firewalls, email gateways, and endpoint products worldwide. Those numbers didn't come from passively ingesting third-party lists — they came from active threat hunting: pivoting on telemetry signals, chasing infrastructure across protocols, and building the classifiers that turned each hunt into durable, published protection. The engineering challenge was less about volume and more about signal quality: making sure the blocks we published were correct enough that customer help desks did not drown in false-positive tickets.",
           "A big part of the work was replacing external reputation feeds with internally generated intelligence, which cut third-party data costs while giving us more control over precision and coverage. Patent US 11,743,276 grew out of this line of work: combining cross-protocol signals into a single reputation score that is more robust to any one channel being poisoned."
         ],
-        "patent_refs": ["US11743276B2"],
-        "press_terms": ["reputation", "spam", "phishing", "spamhaus", "botnet"]
+        "patent_refs": [
+          "US11743276B2"
+        ],
+        "press_terms": [
+          "reputation",
+          "spam",
+          "phishing",
+          "spamhaus",
+          "botnet"
+        ]
       },
       {
         "id": "botnets",
         "heading": "Botnet analysis and takedowns",
         "body": [
-          "Much of my early classifier work targeted the largest email-sending botnets of the era &mdash; Rustock, Grum, Cutwail, Kelihos, and their descendants. I contributed to takedown-adjacent analysis, wrote the classifiers that recognized their traffic in the wild, and spoke to the press regularly as those campaigns collapsed and reorganized.",
+          "Much of my early classifier work targeted the largest email-sending botnets of the era — Rustock, Grum, Cutwail, Kelihos, and their descendants. I contributed to takedown-adjacent analysis, wrote the classifiers that recognized their traffic in the wild, and spoke to the press regularly as those campaigns collapsed and reorganized.",
           "The lesson that has stuck with me: takedowns are a punctuation mark in a much longer story. Real, durable protection comes from telemetry pipelines that keep pace with attackers as they migrate infrastructure, not from any single legal or technical action."
         ],
-        "press_terms": ["botnet", "rustock", "grum", "kelihos", "spam"]
+        "press_terms": [
+          "botnet",
+          "rustock",
+          "grum",
+          "kelihos",
+          "spam"
+        ]
       },
       {
         "id": "malicious-ip-ml",
         "heading": "Machine-learning classifiers for malicious traffic",
         "body": [
-          "Building ML classifiers that hold up in production security is a different discipline from building them in a notebook. Attackers actively adapt to your model; feature drift is adversarial, not just statistical. I spent years doing feature engineering for messaging, connection, and domain classifiers &mdash; and, importantly, building the internal tooling that let researchers iterate on those features quickly against fresh telemetry.",
-          "Patent US 11,689,550 covers one line of that work: analyzing malicious network traffic in a way that generalizes across attack families rather than overfitting to any single campaign. The internal research portal I built at McAfee &mdash; unifying disparate data sources behind one query interface &mdash; is what made that kind of iteration practical for the team."
+          "Building ML classifiers that hold up in production security is a different discipline from building them in a notebook. Attackers actively adapt to your model; feature drift is adversarial, not just statistical. I spent years doing feature engineering for messaging, connection, and domain classifiers — and, importantly, building the internal tooling that let researchers iterate on those features quickly against fresh telemetry.",
+          "Patent US 11,689,550 covers one line of that work: analyzing malicious network traffic in a way that generalizes across attack families rather than overfitting to any single campaign. The internal research portal I built at McAfee — unifying disparate data sources behind one query interface — is what made that kind of iteration practical for the team."
         ],
-        "patent_refs": ["US11689550B2"],
-        "press_terms": ["machine learning", "classifier", "ip", "reputation"]
+        "patent_refs": [
+          "US11689550B2"
+        ],
+        "press_terms": [
+          "machine learning",
+          "classifier",
+          "ip",
+          "reputation"
+        ]
       },
       {
         "id": "mobile",
         "heading": "Mobile threat intelligence",
         "body": [
-          "At Zimperium the work shifts to mobile: on-device detection and cloud-side analytics for iOS and Android threats, from malicious apps and phishing to network-layer attacks. I lead the data, edge, and application-analysis engineering teams that turn on-device telemetry into intelligence customers can actually operationalize &mdash; including a full uplift of the datacenter footprint from physical Rackspace infrastructure to virtualized Oracle, and a new generation of edge delivery systems that get threat intelligence out to customer consoles in near real time.",
+          "At Zimperium the work shifts to mobile: on-device detection and cloud-side analytics for iOS and Android threats, from malicious apps and phishing to network-layer attacks. I led the data, edge, and application-analysis engineering teams that turn on-device telemetry into intelligence customers can actually operationalize — including a full uplift of the datacenter footprint from physical Rackspace infrastructure to virtualized Oracle, and a new generation of edge delivery systems that get threat intelligence out to customer consoles in near real time.",
           "I chair the Principal Engineering Committee, which is where we align long-term technical priorities across the org, and I'm the executive-level escalation contact for threat analysis on strategic accounts."
         ],
-        "press_terms": ["mobile", "android", "ios", "zimperium"]
+        "press_terms": [
+          "mobile",
+          "android",
+          "ios",
+          "zimperium"
+        ]
       },
       {
         "id": "messaging-abuse",
@@ -68,7 +94,13 @@
           "Spam and phishing are where I cut my teeth. From CipherTrust and Secure Computing through McAfee, I've written and maintained anti-spam classifiers, spearphishing detection heuristics, and connection-reputation systems that fed the email-security products of that era. I designed and produced the complete anti-spam configuration for the IronMail appliance, ran zero-day fixes, and trained engineers on the backend systems and UNIX internals that kept it running.",
           "This is also where the public-relations side of my career started. Editors and reporters need someone who can explain a new phishing wave, a spoofed-brand campaign, or a botnet flare-up in plain language on deadline. I've done that a lot."
         ],
-        "press_terms": ["spam", "phishing", "email", "spearphishing", "malware"]
+        "press_terms": [
+          "spam",
+          "phishing",
+          "email",
+          "spearphishing",
+          "malware"
+        ]
       },
       {
         "id": "public-relations",
