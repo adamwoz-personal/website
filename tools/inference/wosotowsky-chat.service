@@ -11,6 +11,7 @@ Environment=AWS_REGION=us-east-2
 Environment=CHAT_STATE_DIR=/var/lib/wosotowsky-chat
 Environment=CHAT_LOG_LEVEL=INFO
 Environment=PYTHONUNBUFFERED=1
+Environment=PYTHONDONTWRITEBYTECODE=1
 EnvironmentFile=-/etc/wosotowsky-chat/env
 WorkingDirectory=/opt/wosotowsky-chat/website
 ExecStart=/opt/wosotowsky-chat/venv/bin/python -m uvicorn tools.inference.chat_service.app:app --host 127.0.0.1 --port 8787 --workers 1 --log-level info
