@@ -15,6 +15,7 @@
   <meta property="og:image" content="https://wosotowsky.org/adam/assets/og-card.png">
   <meta property="og:url" content="https://wosotowsky.org/adam/chat/">
   <meta name="twitter:card" content="summary_large_image">
+  <script src="/adam/assets/chat-launcher.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -55,13 +56,13 @@
         <span class="chip" data-suggest="What kind of role is Adam looking for?">what he's looking for</span>
         <span class="chip" data-suggest="Where has Adam spoken publicly?">speaking</span>
       </div>
-      <p class="chat-footnote">Runs on AWS Bedrock via a small self-hosted service. Rate limits and a daily token budget keep costs bounded. Nothing sensitive is stored; message bodies are truncated to 64 characters in an audit log for abuse triage. See <a href="/adam/philosophy/#agentic-ai">the philosophy essay</a> for the design thinking.</p>
+      <p class="chat-footnote">Runs on a small self-hosted inference service with per-IP rate limits and a daily token budget to bound costs. For abuse triage, requests log a hashed IP, token counts, and the first 64 characters of the message body &mdash; so avoid pasting anything you would not want retained. See <a href="/adam/philosophy/#agentic-ai">the philosophy essay</a> for the design thinking.</p>
     </section>
     <script src="/adam/chat/chat.js" defer></script>
   </main>
   <footer class="site-footer">
     <div class="wrap">
-      <p>Generated 2026-08-08 19:11 UTC &middot; Static HTML only.</p>
+      <p>Generated 2026-08-09 17:00 UTC &middot; Static HTML only.</p>
     </div>
   </footer>
 </body>
