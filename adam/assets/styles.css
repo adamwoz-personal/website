@@ -482,6 +482,7 @@ code {
 }
 .wos-chat-teaser-close:hover { color: var(--gt-red); }
 
+.wos-chat-panel[hidden] { display: none !important; }
 .wos-chat-panel {
   position: absolute; right: 0; bottom: 3.6rem;
   width: 380px; max-width: calc(100vw - 2rem);
