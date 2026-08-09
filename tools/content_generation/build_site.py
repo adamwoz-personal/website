@@ -37,6 +37,7 @@ HEADER = """<!doctype html>
   <meta property="og:image" content="https://wosotowsky.org/adam/assets/og-card.png">
   <meta property="og:url" content="https://wosotowsky.org{path}">
   <meta name="twitter:card" content="summary_large_image">
+  <script src="/adam/assets/chat-launcher.js" defer></script>
 </head>
 <body>
   <header class="site-header">
