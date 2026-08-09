@@ -63,15 +63,16 @@ class RateLimiter:
                     if not dq:
                         self._hour.pop(k, None)
 
+            self._check_count += 1
+            if self._check_count % 1000 == 0:
+                self._prune_ip_dicts()
+
             if len(minute_dq) >= config.PER_IP_REQUESTS_PER_MINUTE:
                 return False, "rate_limit_minute"
             if len(hour_dq) >= config.PER_IP_REQUESTS_PER_HOUR:
                 return False, "rate_limit_hour"
             minute_dq.append(now)
             hour_dq.append(now)
-            self._check_count += 1
-            if self._check_count % 1000 == 0:
-                self._prune_ip_dicts()
         return True, ""
 
     def check_budget(self) -> tuple[bool, str]:
