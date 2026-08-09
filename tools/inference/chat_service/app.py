@@ -100,27 +100,22 @@ async def message(req: Request) -> StreamingResponse:
         model_used: str | None = None
         input_tokens = 0
         output_tokens = 0
-        loop = asyncio.get_event_loop()
 
-        def blocking_stream():
-            return list(bedrock_stream(_system_prompt, user_message))
+        from starlette.concurrency import iterate_in_threadpool
 
         try:
-            chunks = await loop.run_in_executor(None, blocking_stream)
-        except Exception as e:
+            async for model_id, chunk in iterate_in_threadpool(bedrock_stream(_system_prompt, user_message)):
+                model_used = model_id
+                if chunk.text:
+                    yield _sse("token", chunk.text)
+                if chunk.stop:
+                    input_tokens = chunk.input_tokens or input_tokens
+                    output_tokens = chunk.output_tokens or output_tokens
+        except Exception:
             log.exception("bedrock stream failed")
-            _usage.record(ip_hash=ip_hash, model=None, input_tokens=0, output_tokens=0, duration_ms=int((time.monotonic()-started)*1000), status="error", error_code="bedrock_failed", message=user_message)
+            _usage.record(ip_hash=ip_hash, model=None, input_tokens=0, output_tokens=0, duration_ms=int((time.monotonic() - started) * 1000), status="error", error_code="bedrock_failed", message=user_message)
             yield _sse("error", "The assistant is unavailable right now. Please try again in a minute, or use the contact page.")
             return
-
-        for model_id, chunk in chunks:
-            model_used = model_id
-            if chunk.text:
-                yield _sse("token", chunk.text)
-            if chunk.stop:
-                input_tokens = chunk.input_tokens or input_tokens
-                output_tokens = chunk.output_tokens or output_tokens
-
         yield _sse("done", "")
 
         _rate.record_tokens(input_tokens + output_tokens)
