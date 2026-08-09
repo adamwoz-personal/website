@@ -11,7 +11,26 @@
   const MAX_CHARS = 2000;
   const TEASER_DELAY_MS = 4000;
 
-  if (localStorage.getItem(LS_DISMISSED) === "1") return;
+  // Guard against environments where localStorage throws (private mode, blocked storage, etc.)
+  const safeLS = (function () {
+    try {
+      const t = "__wos_probe__";
+      localStorage.setItem(t, "1");
+      localStorage.removeItem(t);
+      return {
+        get: (k) => { try { return localStorage.getItem(k); } catch (_) { return null; } },
+        set: (k, v) => { try { localStorage.setItem(k, v); } catch (_) {} },
+      };
+    } catch (_) {
+      const mem = {};
+      return {
+        get: (k) => (k in mem ? mem[k] : null),
+        set: (k, v) => { mem[k] = v; },
+      };
+    }
+  })();
+
+  if (safeLS.get(LS_DISMISSED) === "1") return;
 
   function el(tag, attrs, children) {
     const n = document.createElement(tag);
@@ -33,7 +52,10 @@
   }
 
   // ---- DOM ----
-  const root = el("div", { class: "wos-chat-root", "aria-hidden": "true" });
+  // The launcher root is a normal interactive region (contains the trigger pill).
+  // The dialog inside is aria-modal and toggled via [hidden]; do NOT aria-hide
+  // the root or screen readers can't reach the pill or the open dialog.
+  const root = el("div", { class: "wos-chat-root" });
 
   const pill = el("button", {
     class: "wos-chat-pill",
@@ -57,7 +79,7 @@
   const panel = el("div", {
     class: "wos-chat-panel",
     role: "dialog",
-    "aria-modal": "false",
+    "aria-modal": "true",
     "aria-labelledby": "wos-chat-title",
     hidden: "",
   });
@@ -115,14 +137,14 @@
   document.addEventListener("DOMContentLoaded", () => document.body.appendChild(root));
 
   // ---- teaser scheduling ----
-  const firstSeen = localStorage.getItem(LS_FIRST_SEEN);
+  const firstSeen = safeLS.get(LS_FIRST_SEEN);
   if (!firstSeen) {
     setTimeout(() => {
-      if (panel.hasAttribute("hidden") && localStorage.getItem(LS_DISMISSED) !== "1") {
+      if (panel.hasAttribute("hidden") && safeLS.get(LS_DISMISSED) !== "1") {
         teaser.classList.add("wos-chat-teaser-visible");
       }
     }, TEASER_DELAY_MS);
-    localStorage.setItem(LS_FIRST_SEEN, "1");
+    safeLS.set(LS_FIRST_SEEN, "1");
   }
   teaserClose.addEventListener("click", (e) => {
     e.stopPropagation();
@@ -152,7 +174,7 @@
     document.removeEventListener("keydown", onKeydown);
     if (previouslyFocused && previouslyFocused.focus) previouslyFocused.focus();
     if (dismissForever) {
-      localStorage.setItem(LS_DISMISSED, "1");
+      safeLS.set(LS_DISMISSED, "1");
       root.remove();
     }
   }
