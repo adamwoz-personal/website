@@ -21,6 +21,7 @@ class RateLimiter:
         self._lock = threading.Lock()
         self._daily_tokens = 0
         self._daily_day = self._utc_day()
+        self._check_count = 0
 
     @staticmethod
     def _utc_day() -> str:
@@ -30,6 +31,13 @@ class RateLimiter:
         cutoff = now - window
         while dq and dq[0] < cutoff:
             dq.popleft()
+
+    def _prune_ip_dicts(self) -> None:
+        """Remove entries for IPs whose deques are now empty to bound memory."""
+        for d in (self._minute, self._hour):
+            empty = [k for k, v in d.items() if not v]
+            for k in empty:
+                del d[k]
 
     def check_ip(self, ip_key: str) -> tuple[bool, str]:
         now = time.monotonic()
@@ -61,6 +69,9 @@ class RateLimiter:
                 return False, "rate_limit_hour"
             minute_dq.append(now)
             hour_dq.append(now)
+            self._check_count += 1
+            if self._check_count % 1000 == 0:
+                self._prune_ip_dicts()
         return True, ""
 
     def check_budget(self) -> tuple[bool, str]:
