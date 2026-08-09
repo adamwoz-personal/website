@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
-# Deploy code updates to the chat service. Run from repo root.
+# Deploy code updates to the chat service. Run on the EC2 instance from any directory.
 set -euo pipefail
-sudo rsync -a --delete --exclude '.git' --exclude '__pycache__' /home/ec2-user/website/ /opt/wosotowsky-chat/website/
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+sudo rsync -a --delete --exclude '.git' --exclude '__pycache__' "$ROOT_DIR"/ /opt/wosotowsky-chat/website/
 sudo chown -R chatapp:chatapp /opt/wosotowsky-chat/website
 sudo systemctl restart wosotowsky-chat.service
 sleep 2
