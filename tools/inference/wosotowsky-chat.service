@@ -1,0 +1,51 @@
+[Unit]
+Description=wosotowsky.org public chat service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=chatapp
+Group=chatapp
+Environment=AWS_REGION=us-east-2
+Environment=CHAT_STATE_DIR=/var/lib/wosotowsky-chat
+Environment=CHAT_LOG_LEVEL=INFO
+Environment=PYTHONUNBUFFERED=1
+Environment=PYTHONDONTWRITEBYTECODE=1
+EnvironmentFile=-/etc/wosotowsky-chat/env
+WorkingDirectory=/opt/wosotowsky-chat/website
+ExecStart=/opt/wosotowsky-chat/venv/bin/python -m uvicorn tools.inference.chat_service.app:app --host 127.0.0.1 --port 8787 --workers 1 --log-level info
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=10
+
+# --- sandboxing ---
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/wosotowsky-chat
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+ProtectHostname=true
+ProtectClock=true
+ProtectKernelLogs=true
+RestrictNamespaces=true
+RestrictRealtime=true
+RestrictSUIDSGID=true
+LockPersonality=true
+MemoryDenyWriteExecute=false
+SystemCallArchitectures=native
+CapabilityBoundingSet=
+AmbientCapabilities=
+PrivateDevices=true
+DevicePolicy=closed
+
+# --- limits ---
+MemoryMax=384M
+TasksMax=64
+LimitNOFILE=1024
+
+[Install]
+WantedBy=multi-user.target

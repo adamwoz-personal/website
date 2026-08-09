@@ -278,3 +278,64 @@ python3 tools/content_generation/build_site.py \
   `wosotowsky.org.` pointing at the ALB.
 
 
+
+---
+
+## Chat service (added post-v0.1)
+
+The public Q&A widget at `/adam/chat/` is powered by a small FastAPI service
+running under systemd on the EC2 instance, calling AWS Bedrock via an IAM
+instance profile.
+
+**Components**:
+- Code:               `tools/inference/chat_service/`
+- systemd unit:       `tools/inference/wosotowsky-chat.service` (installed to `/etc/systemd/system/`)
+- nginx rate zone:    `tools/inference/nginx-chat.conf` (installed as `/etc/nginx/conf.d/chat-zones.conf` and `/etc/nginx/default.d/chat.conf`)
+- Deploy target:      `/opt/wosotowsky-chat/{website,venv}`
+- Runtime state:      `/var/lib/wosotowsky-chat/usage.sqlite`
+- Env file:           `/etc/wosotowsky-chat/env` (contains `CHAT_IP_HASH_SALT`, `CHAT_DAILY_TOKEN_BUDGET`, `CHAT_DATA_DIR`)
+- User:               `chatapp` (system user, `/usr/sbin/nologin`)
+
+**Redeploying code changes**:
+```
+cd /home/ec2-user/website
+python3 tools/content_generation/run_pipeline.py         # static site
+sudo tools/inference/deploy_chat.sh                       # syncs code + restarts service
+sudo rm -rf /usr/share/nginx/html/adam && sudo cp -r adam /usr/share/nginx/html/adam
+sudo cp {404.html,robots.txt,sitemap.xml} /usr/share/nginx/html/
+sudo systemctl reload nginx
+curl -sSf https://wosotowsky.org/adam/chat/ >/dev/null && echo OK
+```
+
+**Bedrock model IDs** (do not change without also updating the IAM policy at
+`tools/inference/iam/bedrock-invoke-policy.json` and re-attaching):
+- Primary:  `us.anthropic.claude-haiku-4-5-20251001-v1:0` (cross-region inference profile)
+- Fallback: `amazon.nova-lite-v1:0`
+
+Direct invocation of the base Haiku 4.5 model ID is not supported by Bedrock -
+you must use the `us.` inference-profile prefix.
+
+**Health, budget, and usage**:
+```
+curl -s http://127.0.0.1:8787/health | python3 -m json.tool
+sudo sqlite3 /var/lib/wosotowsky-chat/usage.sqlite \
+  "SELECT date(ts), model, count(*), sum(input_tokens), sum(output_tokens) FROM usage GROUP BY 1,2 ORDER BY 1 DESC LIMIT 14;"
+```
+
+**Rate limits**:
+- Per-IP: 5 req/min, 30 req/hour (in-app)
+- Per-IP: 30 req/min sustained + 10 burst (nginx `limit_req`)
+- Global: `CHAT_DAILY_TOKEN_BUDGET` tokens/day (env, default 150k). When
+  exhausted, the service returns HTTP 503 with `daily_budget_exhausted` until
+  the next UTC midnight.
+
+**AI-operator rules for this section**:
+1. NEVER put AWS access keys in `/etc/wosotowsky-chat/env` or anywhere else on
+   the box. The instance profile at `iam:role/wosotowsky-bedrock-role` provides
+   credentials via IMDS. Adding keys is a regression.
+2. If Bedrock model IDs change, update BOTH the app config AND
+   `tools/inference/iam/bedrock-invoke-policy.json`, then re-attach the policy.
+3. Do not disable the sandbox directives in the systemd unit (`ProtectSystem`,
+   `NoNewPrivileges`, etc.) without a written justification.
+4. Nginx location for `/adam/chat/api/message` MUST forward `X-Real-IP` so
+   in-app rate limiting works correctly.

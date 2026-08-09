@@ -18,6 +18,7 @@ PAGES = [
     "/adam/pr/",
     "/adam/patents/",
     "/adam/mentions-all/",
+    "/adam/chat/",
     "/adam/contact/",
 ]
 

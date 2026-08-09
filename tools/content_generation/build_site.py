@@ -49,6 +49,7 @@ HEADER = """<!doctype html>
         <a href="/adam/speaking/">Speaking</a>
         <a href="/adam/pr/">Public relations</a>
         <a href="/adam/patents/">Patents</a>
+        <a href="/adam/chat/">Ask</a>
         <a href="/adam/contact/">Contact</a>
       </nav>
     </div>
@@ -139,7 +140,7 @@ def build_landing(patents: list[dict], curated_count: int, unabridged_count: int
       <h1>Adam Wosotowsky</h1>
       <p class="lead">Threat researcher &middot; engineering leader &middot; inventor.</p>
       <p class="lead-sub">Two decades of malware, botnet, and threat-intelligence work quoted across hundreds of press interviews and features. The pages below highlight a curated selection.</p>
-      <p class="hero-links"><a href="/adam/about/">Read a short bio &rarr;</a> &middot; <a href="/adam/work/">What I work on &rarr;</a> &middot; <a href="/adam/philosophy/">Philosophy &rarr;</a> &middot; <a href="/adam/contact/">Contact &rarr;</a> &middot; <a href="/adam/resume.pdf">Resume (PDF) &darr;</a></p>
+      <p class="hero-links"><a href="/adam/about/">Read a short bio &rarr;</a> &middot; <a href="/adam/work/">What I work on &rarr;</a> &middot; <a href="/adam/philosophy/">Philosophy &rarr;</a> &middot; <a href="/adam/chat/">Ask the site &rarr;</a> &middot; <a href="/adam/contact/">Contact &rarr;</a> &middot; <a href="/adam/resume.pdf">Resume (PDF) &darr;</a></p>
       <div class="hero-tiles">
         <a class="tile tile-pr" href="/adam/pr/">
           <span class="tile-label">Public relations</span>
@@ -336,6 +337,41 @@ def build_philosophy(bio: dict) -> str:
     )
 
 
+def build_chat() -> str:
+    body = """
+    <section class="page-head">
+      <h1>Ask about Adam</h1>
+      <p class="lead">A small assistant grounded in this site's own content. Try it on questions about work history, patents, or philosophy. Off-topic questions get redirected \u2014 for anything else you'd want a general chatbot.</p>
+    </section>
+    <section class="card chat-card">
+      <div id="chat-messages" class="chat-messages" aria-live="polite" aria-label="Conversation"></div>
+      <form id="chat-form" class="chat-form" autocomplete="off">
+        <label for="chat-input" class="visually-hidden">Your question</label>
+        <textarea id="chat-input" name="message" rows="2" maxlength="2000" placeholder="Ask about Adam's work, patents, philosophy..." required></textarea>
+        <div class="chat-controls">
+          <div id="chat-status" class="chat-status" aria-live="polite"></div>
+          <button id="chat-submit" type="submit" class="chat-submit">Ask</button>
+        </div>
+      </form>
+      <div class="chat-suggestions">
+        <span class="chip" data-suggest="What has Adam worked on in botnets?">botnets</span>
+        <span class="chip" data-suggest="What are Adam's patents actually about?">patents</span>
+        <span class="chip" data-suggest="How does Adam think about agentic AI in engineering?">agentic AI</span>
+        <span class="chip" data-suggest="What kind of role is Adam looking for?">what he's looking for</span>
+        <span class="chip" data-suggest="Where has Adam spoken publicly?">speaking</span>
+      </div>
+      <p class="chat-footnote">Runs on AWS Bedrock via a small self-hosted service. Rate limits and a daily token budget keep costs bounded. Nothing sensitive is stored; message bodies are truncated to 64 characters in an audit log for abuse triage. See <a href="/adam/philosophy/#agentic-ai">the philosophy essay</a> for the design thinking.</p>
+    </section>
+    <script src="/adam/chat/chat.js" defer></script>
+"""
+    return page(
+        "Ask about Adam \u2014 wosotowsky.org",
+        body,
+        description="A small RAG assistant grounded in Adam Wosotowsky's site content.",
+        path="/adam/chat/",
+    )
+
+
 def build_speaking(bio: dict) -> str:
     sp = bio.get("speaking") or {}
     lead = esc(sp.get("lead", ""))
@@ -465,7 +501,7 @@ def main() -> int:
     patents = patents_payload.get("patents", [])
 
     adam_dir = Path(args.adam_dir)
-    for sub in ("about", "work", "philosophy", "speaking", "contact", "pr", "mentions-all", "patents"):
+    for sub in ("about", "work", "philosophy", "speaking", "contact", "chat", "pr", "mentions-all", "patents"):
         (adam_dir / sub).mkdir(parents=True, exist_ok=True)
 
     (adam_dir / "index.html").write_text(
@@ -476,6 +512,7 @@ def main() -> int:
     (adam_dir / "philosophy" / "index.html").write_text(build_philosophy(bio), encoding="utf-8")
     (adam_dir / "speaking" / "index.html").write_text(build_speaking(bio), encoding="utf-8")
     (adam_dir / "contact" / "index.html").write_text(build_contact(bio), encoding="utf-8")
+    (adam_dir / "chat" / "index.html").write_text(build_chat(), encoding="utf-8")
     (adam_dir / "pr" / "index.html").write_text(build_pr(curated), encoding="utf-8")
     (adam_dir / "mentions-all" / "index.html").write_text(build_all(unabridged), encoding="utf-8")
     (adam_dir / "patents" / "index.html").write_text(build_patents(patents), encoding="utf-8")
