@@ -4,7 +4,7 @@ Endpoints:
   GET  /health     - liveness + budget snapshot
   POST /message    - SSE stream of the model's reply
 
-All errors return SSE `event: error` frames (never JSON in the middle of a stream).
+All in-stream errors return SSE `event: error` frames (request-validation errors return JSON with an `error` code).
 """
 
 from __future__ import annotations
