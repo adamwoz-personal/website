@@ -13,7 +13,7 @@
 set -euo pipefail
 
 REGION=us-east-1
-EMAIL=${EMAIL:-adam.wosotowsky@gmail.com}
+: "${EMAIL:?Set EMAIL to the address that should receive billing alarms}"
 BEDROCK_THRESHOLD_USD=${BEDROCK_THRESHOLD_USD:-5}
 TOTAL_THRESHOLD_USD=${TOTAL_THRESHOLD_USD:-25}
 
