@@ -38,6 +38,23 @@ class RateLimiter:
             hour_dq = self._hour[ip_key]
             self._sweep(minute_dq, now, 60.0)
             self._sweep(hour_dq, now, 3600.0)
+
+            # Opportunistic pruning: avoid unbounded dict growth under many one-off IPs.
+            if len(self._minute) > 10000:
+                for k, dq in list(self._minute.items()):
+                    if k == ip_key:
+                        continue
+                    self._sweep(dq, now, 60.0)
+                    if not dq:
+                        self._minute.pop(k, None)
+            if len(self._hour) > 10000:
+                for k, dq in list(self._hour.items()):
+                    if k == ip_key:
+                        continue
+                    self._sweep(dq, now, 3600.0)
+                    if not dq:
+                        self._hour.pop(k, None)
+
             if len(minute_dq) >= config.PER_IP_REQUESTS_PER_MINUTE:
                 return False, "rate_limit_minute"
             if len(hour_dq) >= config.PER_IP_REQUESTS_PER_HOUR:
