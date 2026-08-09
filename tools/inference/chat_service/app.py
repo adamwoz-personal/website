@@ -43,6 +43,9 @@ CTRL_CHARS = re.compile(r"[\x00-\x08\x0b-\x0c\x0e-\x1f\x7f]")
 
 
 def _client_ip(req: Request) -> str:
+    xrip = req.headers.get("x-real-ip", "")
+    if xrip:
+        return xrip.strip()
     xff = req.headers.get("x-forwarded-for", "")
     if xff:
         return xff.split(",")[0].strip()
