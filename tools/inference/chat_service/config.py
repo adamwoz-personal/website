@@ -35,6 +35,9 @@ BIO_JSON = DATA_DIR / "bio" / "bio.json"
 PATENTS_JSON = DATA_DIR / "patents" / "patents.json"
 MENTIONS_JSON = DATA_DIR / "mentions" / "processed" / "classified.json"
 
-IP_HASH_SALT = os.environ.get("CHAT_IP_HASH_SALT", "wosotowsky-chat-dev-salt-change-me")
+_DEFAULT_IP_HASH_SALT = "wosotowsky-chat-dev-salt-change-me"
+IP_HASH_SALT = os.environ.get("CHAT_IP_HASH_SALT", _DEFAULT_IP_HASH_SALT)
+if IP_HASH_SALT == _DEFAULT_IP_HASH_SALT and str(STATE_DIR).startswith("/var/lib/"):
+    raise RuntimeError("CHAT_IP_HASH_SALT must be set for production deployments")
 
 LOG_LEVEL = os.environ.get("CHAT_LOG_LEVEL", "INFO")
