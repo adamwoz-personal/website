@@ -73,5 +73,4 @@ class UsageLog:
 
     def summary(self) -> dict:
         with self._lock, self._connect() as c:
-            row = c.execute("SELECT COUNT(*), COALESCE(SUM(input_tokens),0), COALESCE(SUM(output_tokens),0) FROM usage WHERE ts >= date('now','-1 day')").fetchone()
-            return {"requests_24h": row[0], "input_tokens_24h": row[1], "output_tokens_24h": row[2]}
+            row = c.execute("SELECT COUNT(*), COALESCE(SUM(input_tokens),0), COALESCE(SUM(output_tokens),0) FROM usage WHERE ts >= datetime('now','-24 hours')").fetchone()
