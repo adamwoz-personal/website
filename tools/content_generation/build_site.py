@@ -230,6 +230,32 @@ def build_patents(patents: list[dict]) -> str:
     )
 
 
+def build_career_arc_card(bio: dict) -> str:
+    arc = bio.get("about", {}).get("career_arc")
+    if not arc:
+        return ""
+    steps = "".join(
+        f"""        <li class="career-step">
+          <div class="career-step-role">{esc(s.get("role",""))}</div>
+          <div class="career-step-employer">{esc(s.get("employer",""))}</div>
+          <div class="career-step-note">{esc(s.get("note",""))}</div>
+        </li>
+"""
+        for s in arc.get("chain", [])
+    )
+    return f"""    <section class="card career-arc">
+      <div class="career-arc-header">
+        <h2>{esc(arc.get("heading","Career arc"))}</h2>
+        <span class="career-arc-years">{esc(arc.get("years",""))}</span>
+      </div>
+      <p class="career-arc-lead">{esc(arc.get("lead",""))}</p>
+      <ol class="career-chain">
+{steps}      </ol>
+      <p class="career-arc-footnote">{esc(arc.get("footnote",""))}</p>
+    </section>
+"""
+
+
 def build_about(bio: dict) -> str:
     about = bio.get("about", {})
     intro_html = "".join(f"      <p>{esc(p)}</p>\n" for p in about.get("intro", []))
@@ -237,6 +263,7 @@ def build_about(bio: dict) -> str:
     roles = about.get("roles_summary", "")
     tagline = esc(about.get("tagline", ""))
     looking_html = build_looking_for_card(bio)
+    career_arc_html = build_career_arc_card(bio)
     return page(
         about.get("title", "About Adam"),
         f"""
@@ -246,7 +273,7 @@ def build_about(bio: dict) -> str:
     </section>
     <section class="card bio-intro">
 {intro_html}    </section>
-    <section class="card bio-highlights">
+{career_arc_html}    <section class="card bio-highlights">
       <h2>Highlights</h2>
       <ul class="bullet-list">
 {highlights_html}      </ul>

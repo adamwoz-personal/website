@@ -3,10 +3,23 @@
     "title": "About Adam",
     "tagline": "Twenty-five years turning noisy security telemetry into clean, actionable protection.",
     "intro": [
-      "I led the data, edge, and application-analysis engineering organizations at Zimperium, where I was responsible for how threat telemetry flowed through the company and how it became protection our customers could act on. Before Zimperium I spent a decade at McAfee and Intel as a Research Architect and Data Architect focused on messaging, connection reputation, and malware research.",
+      "I led the data, edge, and application-analysis engineering organizations at Zimperium, where I was responsible for how threat telemetry flowed through the company and how it became protection our customers could act on. Before Zimperium I spent eighteen years at a single team that was acquired four times — CipherTrust to Secure Computing to McAfee to Intel and back out to McAfee — and was promoted from L3 Support through Principal Engineer, Data Architect, and Research Architect along the way.",
       "The work has always sat at the intersection of three things: large-scale data pipelines, machine-learning classifiers that have to hold up in production, and communicating what threat actors are actually doing to customers, executives, government agencies, and the press. I've been quoted in hundreds of interviews and features, keynoted anti-abuse conferences, taught training courses, chaired principal-engineering committees, and served as an FBI escalation contact.",
       "I hold two U.S. patents on machine-learning techniques for network-security telemetry and I'm a Georgia Tech CS graduate. I currently live in Lilburn, GA."
     ],
+    "career_arc": {
+      "heading": "Eighteen years, one team, five nameplates",
+      "lead": "The middle stretch of my career looks like five employers if you skim it, but it was one continuous team that got acquired four times. I stayed and got promoted through each transition.",
+      "years": "2003 \u2013 2021",
+      "chain": [
+        {"employer": "CipherTrust", "role": "L3 Support", "note": "joined 2003"},
+        {"employer": "Secure Computing", "role": "Special Agent", "note": "CipherTrust acquired, 2006"},
+        {"employer": "McAfee", "role": "Principal Engineer", "note": "Secure Computing acquired, 2008"},
+        {"employer": "Intel Security", "role": "Data Architect", "note": "McAfee acquired, 2011"},
+        {"employer": "McAfee", "role": "Research Architect", "note": "spun back out, 2017"}
+      ],
+      "footnote": "Two U.S. patents, the 7-year PR steering-team seat, the FBI escalation contact role, the M3AAWG contributions, and most of the press coverage all came out of this stretch. Zimperium (2021\u2013present) is where I moved into org leadership and mobile threat intelligence."
+    },
     "highlights": [
       "Steady climb over 25+ years in the security ecosystem: from L3 Support through Principal Engineer, Data Architect, and Research Architect, to Principal Data Architect.",
       "Two granted U.S. patents on network-security machine learning (see /adam/patents/).",
@@ -17,7 +30,7 @@
       "FBI escalation contact; M3AAWG GDPR working-group contributor.",
       "Led full messaging datacenter uplift from physical Rackspace to virtualized Oracle."
     ],
-    "roles_summary": "Principal Data Architect (Zimperium) · Research Architect (McAfee) · Data Architect (Intel) · Principal Engineer (McAfee) · Special Agent (Secure Computing) · L3 Support (CipherTrust) · Developer/QA (Reflex Security) · Web Developer (CNN)."
+    "roles_summary": "Principal Data Architect (Zimperium, 2021\u2013present) \u00b7 Research Architect / Data Architect / Principal Engineer / Special Agent / L3 Support (McAfee \u2192 Intel \u2192 McAfee \u2192 Secure Computing \u2192 CipherTrust, 2003\u20132021, one continuous team through four acquisitions) \u00b7 Developer/QA (Reflex Security) \u00b7 Web Developer (CNN)."
   },
   "work": {
     "title": "What I work on",
