@@ -240,5 +240,64 @@
         ]
       }
     ]
+  },
+  "hire": {
+    "title": "For hiring managers and recruiters",
+    "slug": "hire",
+    "headline": "Twenty-five years turning noisy security telemetry into clean, actionable protection.",
+    "pitch": "I lead data, edge, and analysis engineering organizations that sit at the intersection of large-scale threat telemetry, machine-learning classifiers that hold up in production, and the customer-facing story that makes protection deployable. I hold two U.S. patents on network-security ML, spent nine years on the McAfee PR steering team, and served as an FBI escalation contact. Below is the shortlist. Full detail is one click away.",
+    "highlights": [
+      "Ran the Data, Edge, and Application Analysis engineering organizations at Zimperium (2021–2026); chaired the Principal Engineering Committee.",
+      "Eighteen years at what became McAfee (CipherTrust → Secure Computing → McAfee → Intel → McAfee, 2003–2021), promoted internally from L3 Support through Research Architect.",
+      "Personally owned ~30M IP and ~200K domain reputation blocks per year at Intel/McAfee, driven by dedicated threat hunting rather than passive feeds.",
+      "Two granted U.S. patents on ML for network security (US 11,743,276; US 11,689,550), plus 11+ conference talks, 2 keynotes, and hundreds of press placements.",
+      "Full messaging datacenter uplift from physical Rackspace to virtualized Oracle."
+    ],
+    "looking_for": [
+      "A leadership role that revolves around sifting data for threats, building the pipelines those investigations run on, and coaching motivated individual team members.",
+      "Companies where communication with customers, executives, government partners, and press is treated as part of the engineering craft — not something to route around.",
+      "Environments that value institutional knowledge, patient managers, and long-lived best practices even as agentic AI accelerates the work."
+    ],
+    "ctas": [
+      {
+        "label": "Download resume (PDF)",
+        "href": "/adam/resume.pdf",
+        "primary": true
+      },
+      {
+        "label": "Email me",
+        "href": "mailto:adam.wosotowsky@gmail.com"
+      },
+      {
+        "label": "LinkedIn",
+        "href": "https://www.linkedin.com/in/adamwosotowsky"
+      }
+    ],
+    "see_also": [
+      {
+        "label": "Full About page",
+        "href": "/adam/about/"
+      },
+      {
+        "label": "What I work on",
+        "href": "/adam/work/"
+      },
+      {
+        "label": "Patents",
+        "href": "/adam/patents/"
+      },
+      {
+        "label": "Speaking, teaching, and community",
+        "href": "/adam/speaking/"
+      },
+      {
+        "label": "Curated PR portfolio",
+        "href": "/adam/pr/"
+      },
+      {
+        "label": "How I think about agentic AI and management",
+        "href": "/adam/philosophy/"
+      }
+    ]
   }
 }

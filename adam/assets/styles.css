@@ -387,6 +387,24 @@ code {
 .see-also a { color: var(--gt-red); font-weight: 600; }
 .see-also-inline { color: var(--muted); font-size: 0.95rem; margin-top: 0.6rem; }
 .see-also-inline a { color: var(--gt-navy); font-weight: 600; }
+.see-also-list { list-style: none; padding: 0; margin: 0.4rem 0 0; display: grid; gap: 0.35rem; }
+.see-also-list li::before { content: "\2192  "; color: var(--gt-red); font-weight: 800; }
+
+.hire-pitch-card { border-top: 4px solid var(--gt-red); }
+.hire-pitch { font-size: 1.05rem; line-height: 1.55; color: #222; margin: 0 0 1rem 0; }
+.hire-ctas { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.hire-ctas a {
+  display: inline-block; padding: 0.55rem 1rem; border-radius: 4px;
+  text-decoration: none; font-weight: 700; letter-spacing: 0.01em;
+  border: 2px solid var(--gt-navy);
+}
+.hire-ctas .cta-primary { background: var(--gt-navy); color: #fff; }
+.hire-ctas .cta-primary:hover { background: var(--gt-red); border-color: var(--gt-red); }
+.hire-ctas .cta-secondary { color: var(--gt-navy); background: #fff; }
+.hire-ctas .cta-secondary:hover { background: var(--gt-navy); color: #fff; }
+.hire-highlights { border-top-color: var(--gt-gold); }
+.hire-looking { border-top-color: var(--gt-red); }
+.hire-looking h2 { color: var(--gt-red); border-bottom-color: var(--gt-red); }
 
 .chat-card { border-top-color: var(--gt-red); }
 .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
