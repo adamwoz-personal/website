@@ -314,7 +314,12 @@ def build_about(bio: dict) -> str:
     "Machine learning for security",
     "Mobile threat intelligence",
     "Messaging abuse and email fraud"
-  ]
+  ],
+  "seeks": {{
+    "@type": "Demand",
+    "name": "Cybersecurity engineering leadership role",
+    "description": "Leadership role covering data pipelines, ML classifiers, and threat-intelligence platforms."
+  }}
 }}
     </script>
 """,
@@ -430,6 +435,98 @@ def build_speaking(bio: dict) -> str:
     )
 
 
+def build_hire(bio: dict) -> str:
+    h = bio.get("hire") or {}
+    if not h:
+        return ""
+    headline = esc(h.get("headline", ""))
+    pitch_html = f"      <p class=\"hire-pitch\">{esc(h.get('pitch', ''))}</p>\n"
+    highlights_html = "".join(
+        f"        <li>{esc(x)}</li>\n" for x in h.get("highlights", [])
+    )
+    looking_html = "".join(
+        f"        <li>{esc(x)}</li>\n" for x in h.get("looking_for", [])
+    )
+    cta_parts = []
+    for cta in h.get("ctas", []):
+        cls = "cta-primary" if cta.get("primary") else "cta-secondary"
+        href = esc(cta.get("href", "#"))
+        label = esc(cta.get("label", ""))
+        rel = ' rel="noopener noreferrer"' if href.startswith("http") else ""
+        cta_parts.append(f'<a class="{cls}" href="{href}"{rel}>{label}</a>')
+    ctas_html = "\n        ".join(cta_parts)
+    see_also_html = "".join(
+        f'      <li><a href="{esc(link.get("href","#"))}">{esc(link.get("label",""))}</a></li>\n'
+        for link in h.get("see_also", [])
+    )
+    jsonld = {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Adam Wosotowsky",
+        "url": "https://wosotowsky.org/adam/hire/",
+        "jobTitle": "Cybersecurity research and engineering leader",
+        "description": h.get("pitch", "")[:300],
+        "sameAs": [
+            "https://www.linkedin.com/in/adamwosotowsky",
+            "https://github.com/adamwoz-personal",
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Lilburn",
+            "addressRegion": "GA",
+            "addressCountry": "US",
+        },
+        "seeks": {
+            "@type": "Demand",
+            "name": "Cybersecurity engineering leadership role",
+            "description": " ".join(h.get("looking_for", [])),
+        },
+        "knowsAbout": [
+            "Threat intelligence",
+            "Machine learning for security",
+            "Data engineering",
+            "Malware analysis",
+            "Mobile threat intelligence",
+            "Engineering leadership",
+        ],
+    }
+    jsonld_html = json.dumps(jsonld, indent=2, ensure_ascii=False)
+    return page(
+        h.get("title", "For hiring managers and recruiters"),
+        f"""
+    <section class="page-head">
+      <h1>{esc(h.get("title","For hiring managers and recruiters"))}</h1>
+      <p class="lead">{headline}</p>
+    </section>
+    <section class="card hire-pitch-card">
+{pitch_html}      <div class="hire-ctas">
+        {ctas_html}
+      </div>
+    </section>
+    <section class="card hire-highlights">
+      <h2>Shortlist</h2>
+      <ul class="bullet-list">
+{highlights_html}      </ul>
+    </section>
+    <section class="card hire-looking">
+      <h2>What I'm looking for</h2>
+      <ul class="bullet-list">
+{looking_html}      </ul>
+    </section>
+    <section class="card see-also">
+      <h2>Go deeper</h2>
+      <ul class="see-also-list">
+{see_also_html}      </ul>
+    </section>
+    <script type="application/ld+json">
+{jsonld_html}
+    </script>
+""",
+        description=h.get("headline", ""),
+        path="/adam/hire/",
+    )
+
+
 def build_contact(bio: dict) -> str:
     c = bio.get("contact") or {}
     lead = esc(c.get("lead", ""))
@@ -529,7 +626,7 @@ def main() -> int:
     patents = patents_payload.get("patents", [])
 
     adam_dir = Path(args.adam_dir)
-    for sub in ("about", "work", "philosophy", "speaking", "contact", "chat", "pr", "mentions-all", "patents"):
+    for sub in ("about", "work", "philosophy", "speaking", "contact", "chat", "hire", "pr", "mentions-all", "patents"):
         (adam_dir / sub).mkdir(parents=True, exist_ok=True)
 
     (adam_dir / "index.html").write_text(
@@ -541,6 +638,7 @@ def main() -> int:
     (adam_dir / "speaking" / "index.html").write_text(build_speaking(bio), encoding="utf-8")
     (adam_dir / "contact" / "index.html").write_text(build_contact(bio), encoding="utf-8")
     (adam_dir / "chat" / "index.html").write_text(build_chat(), encoding="utf-8")
+    (adam_dir / "hire" / "index.html").write_text(build_hire(bio), encoding="utf-8")
     (adam_dir / "pr" / "index.html").write_text(build_pr(curated), encoding="utf-8")
     (adam_dir / "mentions-all" / "index.html").write_text(build_all(unabridged), encoding="utf-8")
     (adam_dir / "patents" / "index.html").write_text(build_patents(patents), encoding="utf-8")

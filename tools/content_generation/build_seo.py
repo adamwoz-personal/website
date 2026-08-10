@@ -20,6 +20,7 @@ PAGES = [
     "/adam/mentions-all/",
     "/adam/chat/",
     "/adam/contact/",
+    "/adam/hire/",
 ]
 
 
