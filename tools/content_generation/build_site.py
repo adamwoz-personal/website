@@ -71,8 +71,8 @@ FOOTER = """  </main>
 
 def page(title: str, body: str, description: str = "", path: str = "/adam/") -> str:
     default_desc = (
-        "Adam Wosotowsky: threat researcher, engineering leader, inventor. "
-        "Two decades of cybersecurity work in malware, botnets, and threat intelligence."
+        "Adam Wosotowsky: principal engineer for AI and machine learning — agentic LLM "
+        "systems, production classifiers, and data platforms. Two decades of ML in threat intelligence."
     )
     return (
         HEADER.format(
@@ -139,8 +139,8 @@ def build_landing(patents: list[dict], curated_count: int, unabridged_count: int
         f"""
     <section class="hero">
       <h1>Adam Wosotowsky</h1>
-      <p class="lead">Threat researcher &middot; engineering leader &middot; inventor.</p>
-      <p class="lead-sub">Two decades of malware, botnet, and threat-intelligence work quoted across hundreds of press interviews and features. The pages below highlight a curated selection.</p>
+      <p class="lead">AI &amp; machine-learning engineer &middot; technical leader &middot; inventor.</p>
+      <p class="lead-sub">Agentic LLM systems, production ML classifiers, and the data platforms behind them &mdash; built on two decades of malware, botnet, and threat-intelligence work quoted across hundreds of press interviews and features. The pages below highlight a curated selection.</p>
       <p class="hero-links"><a href="/adam/about/">Read a short bio &rarr;</a> &middot; <a href="/adam/work/">What I work on &rarr;</a> &middot; <a href="/adam/philosophy/">Philosophy &rarr;</a> &middot; <a href="/adam/chat/">Ask the site &rarr;</a> &middot; <a href="/adam/contact/">Contact &rarr;</a> &middot; <a href="/adam/resume.pdf">Resume (PDF) &darr;</a></p>
       <div class="hero-tiles">
         <a class="tile tile-pr" href="/adam/pr/">
@@ -294,8 +294,8 @@ def build_about(bio: dict) -> str:
   "@type": "Person",
   "name": "Adam Wosotowsky",
   "url": "https://wosotowsky.org/",
-  "jobTitle": "Cybersecurity research and engineering leader",
-  "description": "Threat researcher, engineering leader, and inventor with two decades of work in malware, botnets, and threat intelligence.",
+  "jobTitle": "Principal Engineer — AI & Machine Learning",
+  "description": "Principal engineer building AI and machine-learning systems end to end: agentic LLM pipelines, production classifiers, and the data platforms that feed them. Two U.S. patents.",
   "sameAs": [
     "https://www.linkedin.com/in/adamwosotowsky",
     "https://github.com/adamwoz-personal"
@@ -307,6 +307,13 @@ def build_about(bio: dict) -> str:
     "addressCountry": "US"
   }},
   "knowsAbout": [
+    "Agentic AI",
+    "Large language models",
+    "Model Context Protocol (MCP)",
+    "Retrieval-augmented generation",
+    "Machine learning",
+    "Model evaluation and benchmarking",
+    "Data engineering",
     "Threat intelligence",
     "Malware analysis",
     "Botnet takedowns",
@@ -317,8 +324,8 @@ def build_about(bio: dict) -> str:
   ],
   "seeks": {{
     "@type": "Demand",
-    "name": "Cybersecurity engineering leadership role",
-    "description": "Leadership role covering data pipelines, ML classifiers, and threat-intelligence platforms."
+    "name": "Principal AI/ML engineering role",
+    "description": "Principal-level, hands-on role building AI and machine-learning systems: agentic LLM applications, classifiers, evaluation, and data platforms."
   }}
 }}
     </script>
@@ -464,7 +471,7 @@ def build_hire(bio: dict) -> str:
         "@type": "Person",
         "name": "Adam Wosotowsky",
         "url": "https://wosotowsky.org/adam/hire/",
-        "jobTitle": "Cybersecurity research and engineering leader",
+        "jobTitle": "Principal Engineer — AI & Machine Learning",
         "description": h.get("pitch", "")[:300],
         "sameAs": [
             "https://www.linkedin.com/in/adamwosotowsky",
@@ -478,13 +485,18 @@ def build_hire(bio: dict) -> str:
         },
         "seeks": {
             "@type": "Demand",
-            "name": "Cybersecurity engineering leadership role",
+            "name": "Principal AI/ML engineering role",
             "description": " ".join(h.get("looking_for", [])),
         },
         "knowsAbout": [
+            "Agentic AI",
+            "Large language models",
+            "Model Context Protocol (MCP)",
+            "Machine learning",
+            "Model evaluation and benchmarking",
+            "Data engineering",
             "Threat intelligence",
             "Machine learning for security",
-            "Data engineering",
             "Malware analysis",
             "Mobile threat intelligence",
             "Engineering leadership",

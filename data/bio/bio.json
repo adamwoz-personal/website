@@ -1,11 +1,12 @@
 {
   "about": {
     "title": "About Adam",
-    "tagline": "Twenty-five years turning noisy security telemetry into clean, actionable protection.",
+    "tagline": "Principal engineer building AI and machine-learning systems end to end — agentic LLM pipelines, production classifiers, and the data platforms that feed them.",
     "intro": [
-      "Most recently I led the data, edge, and application-analysis engineering organizations at Zimperium, where I was responsible for how threat telemetry flowed through the company and how it became protection our customers could act on. Before Zimperium I spent eighteen years at a single team that was acquired four times — CipherTrust to Secure Computing to McAfee to Intel and back out to McAfee — and was promoted from L3 Support through Principal Engineer, Data Architect, and Research Architect along the way.",
-      "The work has always sat at the intersection of three things: large-scale data pipelines, machine-learning classifiers that have to hold up in production, and communicating what threat actors are actually doing to customers, executives, government agencies, and the press. I've been quoted in hundreds of interviews and features, keynoted anti-abuse conferences, taught training courses, chaired principal-engineering committees, and served as an FBI escalation contact.",
-      "I hold two U.S. patents on machine-learning techniques for network-security telemetry and I'm a Georgia Tech CS graduate. I currently live in Lilburn, GA."
+      "I build AI and machine-learning systems end to end: agentic LLM pipelines, classical classifiers that have to hold up in production, and the data platforms that feed both. Over 20+ years I designed or implemented 50+ production classifiers and owned a portfolio of roughly 200 for McAfee/Intel Global Threat Intelligence. Most of my hands-on time now goes to modern GenAI — self-hosted LLMs, agentic tool-calling, MCP servers, RAG, and the benchmark harnesses that show whether any of it actually works.",
+      "Most recently I was Principal Data Architect at Zimperium, where I led the Data, Edge, and Application Analysis engineering organizations and directed the pipelines feeding mobile threat-detection models — from raw device and app telemetry through feature extraction to classifier output and customer-facing verdicts. I also built an AI-powered regional mobile threat-assessment portal there. Before Zimperium I spent eighteen years at a single team that was acquired four times — CipherTrust to Secure Computing to McAfee to Intel and back out to McAfee — and was promoted from L3 Support through Principal Engineer, Data Architect, and Research Architect along the way.",
+      "I work from evidence: reproducible benchmarks, held-out evaluation, and measured routing decisions instead of vendor claims. Security taught me that habit — a classifier that is confidently wrong buries a customer help desk in false-positive tickets. I've also spent a lot of time explaining what the data says: hundreds of press interviews, keynotes and training courses, a principal-engineering committee chair, and service as an FBI escalation contact.",
+      "I hold two U.S. patents on machine-learning techniques for network-security telemetry and I'm a Georgia Tech CS graduate. I live in Lilburn, GA."
     ],
     "career_arc": {
       "heading": "Eighteen years, one team, five nameplates",
@@ -41,21 +42,32 @@
       "footnote": "Two U.S. patents, the 7-year PR steering-team seat, the FBI escalation contact role, the M3AAWG contributions, and most of the press coverage all came out of this stretch. Zimperium (2021–2026) is where I moved into org leadership and mobile threat intelligence."
     },
     "highlights": [
+      "Built HomeAI, a fully local agentic voice assistant (~21K lines of Python, 35 test modules): self-hosted Qwen3-Coder-30B, an MCP tool server, whisper.cpp and Piper speech, and a benchmark suite that took local generation from ~25 to 131 tokens/sec.",
+      "Designed or implemented 50+ production classifiers and owned the quality of ~200 for McAfee/Intel Global Threat Intelligence — feature selection, training-data curation, tuning, and false-positive control.",
       "Steady climb over 25+ years in the security ecosystem: from L3 Support through Principal Engineer, Data Architect, and Research Architect, to Principal Data Architect.",
       "Two granted U.S. patents on network-security machine learning (see /adam/patents/).",
       "Leadership and management have been a constant — from organizing cross-team working groups as an L3 support engineer, through Principal Engineer at McAfee, to running the Data, Edge, and Application Analysis engineering organizations at Zimperium and chairing its Principal Engineering Committee.",
       "Personally responsible for ~30M IP and ~200K domain reputation blocks per year at Intel/McAfee, driven by dedicated threat-hunting rather than passive feeds.",
       "7 years on the McAfee Public Relations steering team; hundreds of press placements across blogs, threat reports, magazine interviews, podcasts, and TV.",
       "13+ conference presentations and 2 keynote talks on future-threat prediction; 4 conference training courses delivered.",
-      "FBI escalation contact; M3AAWG GDPR working-group contributor.",
-      "Led full messaging datacenter uplift from physical Rackspace to virtualized Oracle."
+      "FBI escalation contact; M3AAWG GDPR working-group contributor."
     ],
     "roles_summary": "Principal Data Architect (Zimperium, 2021–2026) · Research Architect / Data Architect / Principal Engineer / Special Agent / L3 Support (McAfee → Intel → McAfee → Secure Computing → CipherTrust, 2003–2021, one continuous team through four acquisitions) · Founding engineer (employee #3) at Reflex Security · Web Developer at CNN (during college)."
   },
   "work": {
     "title": "What I work on",
-    "lead": "A tour of the technical areas I've spent the most time on. Each section is grounded in shipping systems, patents, and press coverage where available.",
+    "lead": "A tour of the technical areas I've spent the most time on — from today's agentic LLM work back through two decades of production machine learning in threat intelligence. Each section is grounded in shipping systems, patents, and press coverage where available.",
     "sections": [
+      {
+        "id": "agentic-ai",
+        "heading": "Agentic AI and local LLM systems",
+        "body": [
+          "<a href=\"https://github.com/adamwoz-personal/homeai\" rel=\"noopener noreferrer\">HomeAI</a> is a fully local, privacy-preserving voice agent I designed and built: about 21,000 lines of Python across 30+ modules, with 35 test modules and no cloud dependency in the core path. A self-hosted LLM (Qwen3-Coder-30B on Ollama/llama.cpp) sits inside one interruptible, barge-in conversational loop with whisper.cpp speech recognition, Piper synthesis, openWakeWord detection, and speaker recognition from voice embeddings. An MCP (JSON-RPC) tool server gives the agent weather, web research, and home-automation tools over separate CLI and HTTP transports with distinct risk profiles.",
+          "The part I care most about is measurement. I wrote a reproducible benchmark suite — time-to-first-token, tokens per second, KV-cache configurations, model comparisons — and used it to raise local generation from ~25 to 131 tokens/sec by reallocating GPU memory and quantizing the KV cache. I also wrote an evidence-based model-routing guide that quantifies the local model's real failure modes (tool-iteration ceilings, malformed tool calls, context poisoning) and routes work between local and frontier models by measured capability rather than assumption. A safety and privacy layer validates utterances, sanitizes responses before they are spoken, and keeps memory bounded and self-expiring.",
+          "The same habits show up elsewhere: an AI-powered regional mobile threat-assessment portal at Zimperium, and the <a href=\"/adam/chat/\">“Ask the site”</a> assistant here, which answers questions grounded in a curated corpus of my own work."
+        ],
+        "press_terms": []
+      },
       {
         "id": "reputation",
         "heading": "IP and domain reputation at internet scale",
@@ -149,7 +161,7 @@
   "looking_for": {
     "title": "What I'm looking for",
     "body": [
-      "A leadership role that revolves around sifting data for threats, building pipelines for the data those investigations run on, and working with highly motivated individual team members. I care about the whole loop &mdash; from raw telemetry, through the classifiers and reputation systems that turn it into protection, to the customer-facing story that explains why it matters."
+      "A principal-level, hands-on role building AI and machine-learning systems end to end — agentic LLM applications, production classifiers, evaluation harnesses, and the data platforms that feed them — with room to mentor and lead. Twenty years of ML in threat intelligence is a strength I bring to that work, not a boundary on it."
     ]
   },
   "contact": {
@@ -249,18 +261,19 @@
   "hire": {
     "title": "For hiring managers and recruiters",
     "slug": "hire",
-    "headline": "Twenty-five years turning noisy security telemetry into clean, actionable protection.",
-    "pitch": "I led data, edge, and analysis engineering organizations that sat at the intersection of large-scale threat telemetry, machine-learning classifiers that had to hold up in production, and the customer-facing story that made protection deployable. I hold two U.S. patents on network-security ML, spent nine years on the McAfee PR steering team, and served as an FBI escalation contact. Below is the shortlist. Full detail is one click away.",
+    "headline": "Principal engineer for AI and machine learning — agentic LLM systems, production classifiers, and the data platforms that feed them.",
+    "pitch": "I build AI and machine-learning systems end to end and lead the teams that run them. I designed or implemented 50+ production classifiers and owned a portfolio of ~200 for McAfee/Intel Global Threat Intelligence, led the Data, Edge, and Application Analysis engineering organizations at Zimperium, and spend my hands-on time on agentic LLM systems: self-hosted models, MCP tool servers, RAG, and the benchmarks that keep them honest. I hold two U.S. patents on network-security ML. Below is the shortlist. Full detail is one click away.",
     "highlights": [
-      "Ran the Data, Edge, and Application Analysis engineering organizations at Zimperium (2021–2026); chaired the Principal Engineering Committee.",
+      "Built HomeAI (github.com/adamwoz-personal/homeai), a fully local agentic voice assistant: self-hosted Qwen3-Coder-30B, MCP tool server, speech in and out, speaker recognition, and a benchmark suite that raised local generation from ~25 to 131 tokens/sec.",
+      "Designed or implemented 50+ production classifiers and owned ~200 for McAfee/Intel Global Threat Intelligence; two granted U.S. patents on ML for network security (US 11,743,276; US 11,689,550).",
+      "Ran the Data, Edge, and Application Analysis engineering organizations at Zimperium (2021–2026), directing the pipelines that fed mobile threat-detection models; chaired the Principal Engineering Committee.",
+      "Built an AI-powered regional mobile threat-assessment portal at Zimperium, and the “Ask the site” assistant on this site, grounded in a curated corpus of my own work.",
       "Eighteen years at what became McAfee (CipherTrust → Secure Computing → McAfee → Intel → McAfee, 2003–2021), promoted internally from L3 Support through Research Architect.",
-      "Personally owned ~30M IP and ~200K domain reputation blocks per year at Intel/McAfee, driven by dedicated threat hunting rather than passive feeds.",
-      "Two granted U.S. patents on ML for network security (US 11,743,276; US 11,689,550), plus 13+ conference talks, 2 keynotes, and hundreds of press placements.",
-      "Full messaging datacenter uplift from physical Rackspace to virtualized Oracle."
+      "13+ conference talks, 2 keynotes, 4 training courses, and hundreds of press placements."
     ],
     "looking_for": [
-      "A leadership role that revolves around sifting data for threats, building the pipelines those investigations run on, and coaching motivated individual team members.",
-      "Companies where communication with customers, executives, government partners, and press is treated as part of the engineering craft — not something to route around.",
+      "A principal-level, hands-on role building AI and machine-learning systems — agentic LLM applications, classifiers, evaluation, and the data platforms underneath them — with room to mentor and lead.",
+      "Teams that measure before they decide: reproducible benchmarks, held-out evaluation, and honest failure-mode analysis instead of vendor claims.",
       "Environments that value institutional knowledge, patient managers, and long-lived best practices even as agentic AI accelerates the work."
     ],
     "ctas": [
