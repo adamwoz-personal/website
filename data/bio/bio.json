@@ -167,6 +167,11 @@
         "href": "https://www.linkedin.com/in/adamwosotowsky"
       },
       {
+        "label": "GitHub",
+        "value": "github.com/adamwoz-personal",
+        "href": "https://github.com/adamwoz-personal"
+      },
+      {
         "label": "Location",
         "value": "Lilburn, GA — just outside the perimeter, northeast of Atlanta",
         "href": null
@@ -271,6 +276,10 @@
       {
         "label": "LinkedIn",
         "href": "https://www.linkedin.com/in/adamwosotowsky"
+      },
+      {
+        "label": "GitHub",
+        "href": "https://github.com/adamwoz-personal"
       }
     ],
     "see_also": [
