@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="referrer" content="no-referrer-when-downgrade">
   <title>What I work on</title>
-  <meta name="description" content="A tour of the technical areas I&#x27;ve spent the most time on. Each section is grounded in shipping systems, patents, and press coverage where available.">
+  <meta name="description" content="A tour of the technical areas I&#x27;ve spent the most time on — from today&#x27;s agentic LLM work back through two decades of production machine learning in threat intelligence. Each section is grounded in shipping systems, patents, and press coverage where available.">
   <link rel="stylesheet" href="/adam/assets/styles.css">
   <link rel="icon" type="image/png" sizes="32x32" href="/adam/assets/favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/adam/assets/apple-touch-icon.png">
   <meta property="og:type" content="website">
   <meta property="og:title" content="What I work on">
-  <meta property="og:description" content="A tour of the technical areas I&#x27;ve spent the most time on. Each section is grounded in shipping systems, patents, and press coverage where available.">
+  <meta property="og:description" content="A tour of the technical areas I&#x27;ve spent the most time on — from today&#x27;s agentic LLM work back through two decades of production machine learning in threat intelligence. Each section is grounded in shipping systems, patents, and press coverage where available.">
   <meta property="og:image" content="https://wosotowsky.org/adam/assets/og-card.png">
   <meta property="og:url" content="https://wosotowsky.org/adam/work/">
   <meta name="twitter:card" content="summary_large_image">
@@ -37,8 +37,15 @@
 
     <section class="page-head">
       <h1>What I work on</h1>
-      <p class="lead">A tour of the technical areas I&#x27;ve spent the most time on. Each section is grounded in shipping systems, patents, and press coverage where available.</p>
+      <p class="lead">A tour of the technical areas I&#x27;ve spent the most time on — from today&#x27;s agentic LLM work back through two decades of production machine learning in threat intelligence. Each section is grounded in shipping systems, patents, and press coverage where available.</p>
     </section>
+    <section class="card work-section" id="agentic-ai">
+      <h2>Agentic AI and local LLM systems</h2>
+      <p><a href="https://github.com/adamwoz-personal/homeai" rel="noopener noreferrer">HomeAI</a> is a fully local, privacy-preserving voice agent I designed and built: about 21,000 lines of Python across 30+ modules, with 35 test modules and no cloud dependency in the core path. A self-hosted LLM (Qwen3-Coder-30B on Ollama/llama.cpp) sits inside one interruptible, barge-in conversational loop with whisper.cpp speech recognition, Piper synthesis, openWakeWord detection, and speaker recognition from voice embeddings. An MCP (JSON-RPC) tool server gives the agent weather, web research, and home-automation tools over separate CLI and HTTP transports with distinct risk profiles.</p>
+      <p>The part I care most about is measurement. I wrote a reproducible benchmark suite — time-to-first-token, tokens per second, KV-cache configurations, model comparisons — and used it to raise local generation from ~25 to 131 tokens/sec by reallocating GPU memory and quantizing the KV cache. I also wrote an evidence-based model-routing guide that quantifies the local model's real failure modes (tool-iteration ceilings, malformed tool calls, context poisoning) and routes work between local and frontier models by measured capability rather than assumption. A safety and privacy layer validates utterances, sanitizes responses before they are spoken, and keeps memory bounded and self-expiring.</p>
+      <p>The same habits show up elsewhere: an AI-powered regional mobile threat-assessment portal at Zimperium, and the <a href="/adam/chat/">“Ask the site”</a> assistant here, which answers questions grounded in a curated corpus of my own work.</p>
+    </section>
+
     <section class="card work-section" id="reputation">
       <h2>IP and domain reputation at internet scale</h2>
       <p>At Intel and McAfee I owned the data pipelines, classifiers, and threat-hunting practice behind global IP and domain reputation feeds. In steady state that meant ~30 million IP blocks and ~200,000 domain blocks published every year, feeding firewalls, email gateways, and endpoint products worldwide. Those numbers didn't come from passively ingesting third-party lists — they came from active threat hunting: pivoting on telemetry signals, chasing infrastructure across protocols, and building the classifiers that turned each hunt into durable, published protection. The engineering challenge was less about volume and more about signal quality: making sure the blocks we published were correct enough that customer help desks did not drown in false-positive tickets.</p>
@@ -86,7 +93,7 @@
   </main>
   <footer class="site-footer">
     <div class="wrap">
-      <p>Generated 2026-10-02 18:22 UTC &middot; Static HTML only.</p>
+      <p>Generated 2026-10-20 17:22 UTC &middot; Static HTML only.</p>
     </div>
   </footer>
 </body>
